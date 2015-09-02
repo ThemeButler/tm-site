@@ -1,0 +1,29 @@
+/*
+Theme Name: ThemeButler
+Template: beans
+Theme URI: http://themebutler.com/
+Author: Chris Rault
+Author URI: http://themebutler.com/
+Description: Custom Tuxedo based theme for themebutler.com.
+Version: 1.0.0
+BeansVersion: 1.0.0
+Text Domain: tm-tbr
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/**
+* Core WP
+*
+* Add styling for the core WP classes.
+*/
+
+.wp-caption,
+.wp-caption-text,
+.sticky,
+.screen-reader-text,
+.gallery-caption,
+.bypostauthor,
+.alignright,
+.alignleft,
+.aligncenter{}

@@ -1,0 +1,110 @@
+/* -- START -- GENERAL */
+.bsaHidden { opacity: 0 }
+/* FONTS */
+.bsaProContainer, .bsaProOrderingForm, .bsaStatsWrapper { font-family: inherit }
+.bsaLoader, .bsaLoaderRedirect { display: inline-block; margin: 0 5px -3px; width: 16px; height: 16px; background: url('../../assets/images/white-loader.gif') white center center no-repeat; background-size: 100%; padding: 2px; border-radius: 20px; }
+.bsaLoaderRedirect { display: block; margin: 20px auto; }
+/* Colors */
+.bsaGreen { color: #4CAF50 }
+.bsaBlue { color: #2196F3 }
+.bsaYellow { color: #FBCD39 } /*FBC02D*/
+.bsaViolet { color: #673AB7 }
+.bsaRed { color: #F44336 }
+.bsaGreenBg { background-color: #4CAF50 }
+.bsaBlueBg { background-color: #2196F3 }
+.bsaYellowBg { background-color: #FBC02D }
+.bsaVioletBg { background-color: #673AB7 }
+.bsaRedBg { background-color: #F44336 }
+/* -- END -- GENERAL */
+
+/* -- START -- ORDERING FORM */
+.bsaProOrderingForm { position: relative; width: 100%; padding: 0; margin: 0; color: #444444; background-color: #FFFFFF; overflow: hidden; }
+.bsaProOrderingFormInner { padding: 20px; overflow: hidden; }
+.bsaProInputs { width: 100%; float: left; }
+.bsaProInputs > h3 { padding: 0 !important; margin: 0 0 15px !important; font-size: 18px !important; }
+.bsaProInputsLeft { margin-right: 0 }
+.bsaProInputsRight { margin-top: 25px; margin-left: 0; }
+.bsaProInput { float: left; width: 100%; margin: 0; padding: 0; }
+.bsaProInput label { float: left; width: 100%; margin: 10px 0 5px 0; font-size: 12px; font-weight: 700; }
+.bsaProInput:nth-of-type(1) label { margin: 0 0 5px }
+.bsaProInput > input, .bsaProInput input[type="file"], .bsaProSelectSpace select { float: left; box-sizing: border-box; border-radius: 3px !important; border: 0 none !important; box-shadow: none !important; -webkit-box-shadow: none !important; font-size: 12px; line-height: 20px; padding: 10px; width: 100% !important; background-color: #f5f5f5 !important; color: #444444; }
+.bsaProSelectSpace > select { background-image: url('../../assets/images/select-arrow.png'); background-repeat: no-repeat; background-position: 97.5% 5px; -moz-appearance: none; -webkit-appearance: none; appearance: none; }
+.bsaProInputsGroup { clear: both; overflow: hidden; }
+.bsaGetBillingModels { float: left; width: 100%; margin: 0 0 20px; clear: both; }
+.bsaProInputsRight .bsaProInputsValues { margin-top: 20px }
+.bsaProInputsRight .bsaInputInnerModel { opacity: .5 }
+.bsaProInputsRight .bsaInputInnerModel.bsaSelected { opacity: 1 }
+.bsaProInputsRight .bsaProInput { float: left; width: 30%; }
+.bsaProInputsRight .bsaProInput:nth-of-type(2) { margin: 0 5% }
+.bsaProInputsRight .bsaInputInner { padding: 10px; margin: 0; text-align: center; overflow: hidden; background-color: #f5f5f5; border-radius: 3px; }
+.bsaProInputsRight .bsaInputInner input, .bsaProInputsRight .bsaInputInner label { cursor: pointer }
+.bsaProInputsRight .bsaInputInner label { display: block; margin-top: 5px; font-size: 14px; line-height: 18px; font-weight: 700; color: #444444; }
+.bsaProExpiration, .bsaProPrice, .bsaProDiscount { display: block }
+.bsaProExpiration { font-weight: 400; font-size: 14px; }
+.bsaProPrice { font-size: 17px; color: #65cc84; }
+.bsaProDiscount { float: right; font-weight: 400; font-size: 11px; text-align: center; background-color: #df5050; color: white; padding: 1px 7px; margin-top: 5px; border-radius: 3px; }
+.bsaProInputsValues .bsaInputInner label { margin: 5px 0 0 }
+.bsaTemplatePreview { max-width: 370px; max-height: 600px; margin-bottom: 20px; clear: both; overflow: hidden; }
+.bsaTemplatePreview .bsaProContainer .bsaProItemInner__img { background-position: center; background-size: 100%; }
+.bsaProSubmit, .bsaProSubmit:hover, .bsaProSubmit:active { border: 0; padding: 10px 30px; margin-left: 28px; }
+.bsaPayPalSection { }
+.bsaPayPalSectionBg { background-color: white; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 20; opacity: .8; }
+.bsaPayPalSectionCenter { height: 100%; width: 100%; overflow: auto; margin: auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0; z-index: 100; }
+.bsaPayPalSectionCenterFixed { position: fixed; z-index: 999; }
+.bsaPayPalSectionCenterResponsive { width: 60%; height: 60%; min-width: 200px; max-width: 400px; padding: 40px; }
+.bsaProImgSubmit { display: block; margin: 0 auto; background: white; }
+/* -- END -- ORDERING FORM */
+/* -- START -- ALERTS */
+.bsaProAlert { float: left; width: 100%; padding: 10px 0; margin: 0 0 15px; border-radius: 3px; text-align: center; z-index: 100; position: relative; }
+.bsaProAlert strong, .bsaProAlert p { display: inline-block; margin: 0; padding: 0; font-size: 14px; line-height: 14px; }
+.bsaProAlert > p { margin: 0 !important }
+.bsaProAlert, .bsaProAlert > a, .bsaProAlert > a:hover, .bsaProAlert > a:focus { font-size: 12px; text-decoration: none; color: #ffffff; }
+.bsaProAlertSuccess { background-color: #65cc84 }
+.bsaProAlertFailed { background-color: #df5050 }
+/* -- END -- ALERTS */
+/* -- START -- STATS */
+.bsaStatsWrapper { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 100000; background-color: white; }
+.bsaStatsWrapper h2 { font-size: 22px; margin: 20px 0; }
+.bsaStatsWrapper h3 { font-size: 18px; margin: 15px 0; }
+.bsaStatsWrapperBg { position: fixed; background-color: white; top: 0; left: 0; right: 0; bottom: 0; }
+.bsaStatsWrapper .tooltip { position: absolute; padding: 15px; margin: 0; color: white; background-color: black; }
+.bsaStatsButtons { display: block; overflow: hidden; width: 100%; margin: 0 0 20px; }
+.bsaPrevWeek { display: inline-block; width: 50%; text-align: left; }
+.bsaNextWeek { display: none; float: right; text-align: right; }
+.bsaStatsWrapper table { table-layout: fixed; width: 100%; min-width: 700px; overflow-x: scroll; }
+.bsaStatsWrapper table td { font-weight: normal; border: 1px solid #ededed; padding: 10px 15px; }
+.bsaStatsWrapper .bsaOdd { background-color: #f9f9f9 }
+.bsaStatsWrapperInner { position: relative; max-width: 1200px; padding: 40px; margin: 0 auto; color: black; }
+.bsaSumStats { float: left; width: 30%; padding: 15px 0; text-align: center; margin-bottom: 25px; color: black; background-color: #eeeeee; }
+.bsaStatsWrapper .ct-chart .ct-series.ct-series-b .ct-bar, .bsaStatsWrapper .ct-chart .ct-series.ct-series-b .ct-line, .bsaStatsWrapper .ct-chart .ct-series.ct-series-b .ct-point, .bsaStatsWrapper .ct-chart .ct-series.ct-series-b .ct-slice.ct-donut { stroke: #673AB7 }
+.bsaStatsWrapper  .ct-chart .ct-series.ct-series-a .ct-bar, .bsaStatsWrapper .ct-chart .ct-series.ct-series-a .ct-line, .bsaStatsWrapper .ct-chart .ct-series.ct-series-a .ct-point, .bsaStatsWrapper .ct-chart .ct-series.ct-series-a .ct-slice.ct-donut { stroke: #FBCD39 }
+.bsaStatsClicks { overflow-y: scroll }
+.bsaStatsClose { position: absolute; cursor: pointer; top: 40px; right: 40px; width: 25px; height: 25px; background: url('../../assets/images/close-black.png') white center center no-repeat; }
+.bsaCorrectIcon { display: block; width: 20px; height: 20px; margin: 0 auto; background: url('../../assets/images/correct.png') white center center no-repeat; }
+.bsaInCorrectIcon { display: block; width: 20px; height: 20px; margin: 0 auto; background: url('../../assets/images/incorrect.png') white center center no-repeat; }
+/* -- END -- STATS */
+/* -- START -- LINK */
+.bsaProLink { display: inline; position: relative; cursor: pointer; }
+.bsaProLink .bsaProLinkHover { display: none; opacity: 0; position: absolute; top: 0; padding-top: 25px; /*-webkit-transition: all .4s ease-out; *//* Chrome, Safari, Opera */ /*transition: all .4s ease-out;*/ }
+.bsaProLink:hover .bsaProLinkHover { display: block; opacity: 1; /*-webkit-transition: all .4s ease-out; *//* Chrome, Safari, Opera */ /*transition: all .4s ease-out;*/ -webkit-animation: bsaLinkAnimate .4s ease-out; animation: bsaLinkAnimate .4s ease-out; }
+@-webkit-keyframes bsaLinkAnimate {
+  0% { opacity: 0 }
+  25% { opacity: 0 }
+  90% { opacity: .7 }
+  100% { opacity: 1 }
+}
+@keyframes bsaLinkAnimate {
+  0% { opacity: 0 }
+  25% { opacity: 0 }
+  90% { opacity: .7 }
+  100% { opacity: 1 }
+}
+/* -- END -- LINK */
+/* -- START -- RESPONSIVE STYLES */
+@media (min-width: 768px) {
+  .bsaProInputs { width: 47.5% }
+  .bsaProInputsLeft { margin-right: 2.5% }
+  .bsaProInputsRight { margin-top: 0; margin-left: 2.5%; }
+}
+.bsaProScrollBar .bsaReset { clear: none !important } /* Scroll Bar */
+/* -- END -- RESPONSIVE STYLE */
