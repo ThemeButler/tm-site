@@ -29,14 +29,6 @@ remove_action('wp_enqueue_scripts', 'BSA_PRO_add_custom_stylesheet');
 remove_action('wp_enqueue_scripts', 'BSA_PRO_add_stylesheet_and_script');
 remove_action('wp_enqueue_scripts', 'muut_before_scripts_enqueued');
 
-// Cleanup Muut
-// global $Muut;
-// remove_action( 'wp_enqueue_scripts', array( $Muut, 'enqueueFrontendScripts' ), 11 );
-// remove_action( 'wp_footer', array( $Muut, 'printCurrentPageJs' ), 500 );
-// remove_action( 'wp_footer', array( $Muut, 'printHiddenMuutDiv' ) );
-
-
-
 
 // Remove unnecessary classes
 add_filter( 'nav_menu_css_class', '__return_false' );
@@ -80,7 +72,6 @@ function tbr_setup_theme() {
   beans_add_attribute( 'beans_site', 'class', 'uk-container uk-container-center' );
   beans_add_attribute( 'beans_primary', 'role', 'main' );
   beans_add_attribute( 'beans_site_title_link', 'class', 'tm-logo uk-align-center' );
-  beans_replace_attribute( 'beans_menu_navbar_primary', 'class', ' uk-navbar-nav', 'uk-navbar-nav' );
   beans_replace_attribute( 'beans_main', 'class', ' uk-block', ' uk-block-large' );
   beans_remove_attribute( 'beans_menu_navbar_primary', 'id' );
   beans_remove_attribute( 'beans_post', 'id' );
@@ -182,7 +173,8 @@ if ( ! isset( $content_width ) ) $content_width = 880;
 // Add includes
 do_action( 'themebutler_init' );
 
-  require_once( get_stylesheet_directory() . '/inc/cleanup.php' );
-  require_once( get_stylesheet_directory() . '/inc/alert.php' );
-  require_once( get_stylesheet_directory() . '/admin/cpt.php' );
 
+// Includes
+require_once( get_stylesheet_directory() . '/inc/cleanup.php' );
+require_once( get_stylesheet_directory() . '/inc/alert.php' );
+require_once( get_stylesheet_directory() . '/admin/cpt.php' );

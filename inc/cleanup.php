@@ -40,9 +40,6 @@ function tbr_unregister_default_widgets() {
 
 }
 
-// Remove offcanvas support
-remove_theme_support( 'offcanvas-menu' );
-
 
 // Enable svg support
 add_filter('upload_mimes', 'tbr_svg_mime_type');
