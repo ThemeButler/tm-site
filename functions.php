@@ -163,6 +163,24 @@ function tbr_footer() { ?>
     <div class="tm-copyright">&#169; ThemeButler <?php echo date('Y'); ?>. All rights reserved. A <a href="http://webmonkeys.co.za" target="_blank">Web Monkeys</a> Production.</div>
     <div class="tm-credits uk-text-right">Built with <a href="https://getbeans.io" target="_blank" title="Build Smarter with Beans.">Beans</a>. Powered by <a href="http://wordpress.org" target="_blank">WordPress</a>.</div>
   </div>
+  <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.themebutler.com"]);
+  _paq.push(["setDomains", ["*.themebutler.com"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.themebutler.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.themebutler.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
 
 <? }
 

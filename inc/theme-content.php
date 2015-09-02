@@ -10,18 +10,18 @@
         <hr class="uk-article-divider">
         <div class="uk-grid uk-grid-width-1-3">
           <div>
-            <img src="/site/wp-content/uploads/icon-parent-theme.svg" alt="" width="60" height="60" class="uk-float-left uk-margin-right uk-border-rounded">
+            <img src="/wp-content/uploads/icon-parent-theme.svg" alt="" width="60" height="60" class="uk-float-left uk-margin-right uk-border-rounded">
             <h3 class="uk-margin-small">Parent-theme</h3>
             <a href="<?php echo $download_parent; ?>" onclick="javascript:_paq.push(['trackEvent', 'Theme', 'Download' '<?php echo $title; ?>']);">Download <?php echo $lowercase_title . '-v'. $version . '.zip'; ?></a>
           </div>
 
           <div>
-            <img src="/site/wp-content/uploads/icon-child-theme.svg" alt="" width="60" height="60" class="uk-float-left uk-margin-right uk-border-rounded">
+            <img src="/wp-content/uploads/icon-child-theme.svg" alt="" width="60" height="60" class="uk-float-left uk-margin-right uk-border-rounded">
             <h3 class="uk-margin-small">Child-theme</h3>
             <a href="<?php echo $download_child; ?>" onclick="javascript:_paq.push(['trackEvent', 'Child Theme', 'Download' '<?php echo $title; ?>']);">Download <?php echo $lowercase_title . '-child.zip'; ?></a>
           </div>
           <div>
-            <img src="/site/wp-content/uploads/icon-sketch.svg" alt="" width="60" height="60" class="uk-float-left uk-margin-right uk-border-rounded">
+            <img src="/wp-content/uploads/icon-sketch.svg" alt="" width="60" height="60" class="uk-float-left uk-margin-right uk-border-rounded">
              <h3 class="uk-margin-small">Sketch source</h3>
             <a href="<?php echo $download_sketch; ?>" onclick="javascript:_paq.push(['trackEvent', 'Sketch Source', 'Download' '<?php echo $title; ?>']);">Download <?php echo $lowercase_title . '-sketch.zip'; ?></a>
           </div>
@@ -55,13 +55,13 @@
         <hr class="uk-article-divider">
         <div class="uk-grid uk-grid-width-1-2">
           <div>
-            <figure class="uk-thumbnail uk-float-right uk-margin-left uk-margin-large-top"><a href="" target="_blank"><img src="/site/wp-content/uploads/community.svg" width="125" height="125" alt="Community support for <?php echo $title; ?>"></a></figure>
+            <figure class="uk-thumbnail uk-float-right uk-margin-left uk-margin-large-top"><a href="" target="_blank"><img src="/wp-content/uploads/community.svg" width="125" height="125" alt="Community support for <?php echo $title; ?>"></a></figure>
             <h4>Community Forum</h4>
             <p>While I don't officially provide support for <?php echo $title; ?>, there is a Community discussion forum, where members can help each other.</p>
             <a href="http://community.themebutler.com/t/<?php echo $lowercase_title; ?>" class="uk-button">Ask a question about <?php echo $title; ?></a>
           </div>
           <div>
-            <figure class="uk-thumbnail uk-float-right uk-margin-left uk-margin-large-top"><a href="/?bsa_pro_id=23&amp;bsa_pro_url=1" target="_blank"><img src="/site/wp-content/uploads/bsa-pro-upload/1441178031-banner-codeable-white-125.png" width="125" height="125" alt="WordPress Experts On Demand"></a></figure>
+            <figure class="uk-thumbnail uk-float-right uk-margin-left uk-margin-large-top"><a href="/?bsa_pro_id=23&amp;bsa_pro_url=1" target="_blank"><img src="/wp-content/uploads/bsa-pro-upload/1441178031-banner-codeable-white-125.png" width="125" height="125" alt="WordPress Experts On Demand"></a></figure>
             <h4>Get help on Codeable</h4>
             <p>Need help customizing <?php echo $title; ?>? Codeable is a network of highly skilled WordPress developers, that are available for projects big and small.</p>
             <a href="https://api.referoo.co/s/0gFdE" class="uk-button">Get a free quote</a>
