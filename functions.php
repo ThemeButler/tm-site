@@ -46,7 +46,6 @@ function tbr_home_remove_uikit_components() {
     'comment',
     'dropdown',
     'pagination',
-    'offcanvas',
     'table',
     'subnav',
     'nav'
@@ -76,6 +75,8 @@ function tbr_setup_theme() {
   beans_remove_attribute( 'beans_menu_navbar_primary', 'id' );
   beans_remove_attribute( 'beans_post', 'id' );
   beans_modify_action_hook( 'beans_footer', 'beans_main_after_markup' );
+  beans_replace_attribute( 'beans_menu_navbar_primary', 'class', 'uk-visible-large', 'uk-hidden-small' );
+  beans_replace_attribute( 'beans_primary_menu_offcanvas_button', 'class', 'uk-hidden-large', 'uk-visible-small uk-button-primary uk-float-right uk-margin-top' );
 
 }
 
