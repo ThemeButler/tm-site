@@ -1,10 +1,8 @@
 <?php
 
-if ( !isset( $errors ) ) {
-  $errors = '';
-}
+$errors = array();
 
-if ( beans_post( 'action' ) === 'tbr_contact' ) {
+if ( beans_post( 'tbr_contact' ) == true ) {
 
   // Check message
   if ( !beans_post( 'tbr_message' ) )
@@ -24,8 +22,9 @@ if ( beans_post( 'action' ) === 'tbr_contact' ) {
   elseif ( !is_email( $email ) )
     $errors['tbr_email'] = __( 'Please enter a valid e-mail address.', 'tbr' );
 
+
   // Preceed if no errors
-  if ( !isset( $errors ) ) {
+  if ( empty( $errors ) ) {
 
     $first = $_POST['tbr_first'];
     $last = $_POST['tbr_last'];
@@ -79,9 +78,8 @@ if ( beans_post( 'action' ) === 'tbr_contact' ) {
         <?php if ( $message = beans_get( 'tbr_message', $errors ) ) echo '<p class="tm-error">' . $message . '</p>'; ?>
       </div>
       <div class="uk-width-1-1 uk-form-row tm-form-actions uk-margin-top">
-        <input type="hidden" name="action" value="themebutler_contact"/>
-        <input type="hidden" name="tb_contact" value="1"/>
-        <button class="uk-button uk-button-primary uk-button-large uk-margin-top" name="tb_contact" tabindex="6"><?php _e( 'Submit', 'themebutler' ); ?></button>
+        <input type="hidden" name="tbr_contact" value="1"/>
+        <button class="uk-button uk-button-primary uk-button-large uk-margin-top" name="tbr_submit" tabindex="6"><?php _e( 'Submit', 'themebutler' ); ?></button>
       </div>
     </div>
 
