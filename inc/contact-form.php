@@ -56,17 +56,17 @@ if ( beans_post( 'tbr_contact' ) == true ) {
       <div class="uk-margin-bottom">
         <label class="uk-form-label" for="tbr_first">First name</label>
         <input class="uk-width-1-1 tm-field<?php if ( $message = beans_get( 'tbr_first', $errors ) ) echo ' tm-field-error'; ?>" type="text" value="<?php echo beans_post( 'tbr_first' ); ?>" placeholder="First name" name="tbr_first" autofocus tabindex="1">
-        <?php if ( $message = beans_get( 'tbr_first', $errors ) ) echo '<p class="tm-error">' . $message . '</p>'; ?>
+        <?php if ( $message = beans_get( 'tbr_first', $errors ) ) echo '<p class="uk-form-danger">' . $message . '</p>'; ?>
       </div>
       <div class="uk-margin-bottom">
         <label class="uk-form-label" for="tbr_last">Last name</label>
         <input class="uk-width-1-1 tm-field<?php if ( $message = beans_get( 'tbr_last', $errors ) ) echo ' tm-field-error'; ?>" type="text" value="<?php echo beans_post( 'tbr_last' ); ?>" placeholder="Last name" name="tbr_last" tabindex="2">
-        <?php if ( $message = beans_get( 'tbr_last', $errors ) ) echo '<p class="tm-error">' . $message . '</p>'; ?>
+        <?php if ( $message = beans_get( 'tbr_last', $errors ) ) echo '<p class="uk-form-danger">' . $message . '</p>'; ?>
       </div>
       <div class="uk-margin-bottom">
         <label class="uk-form-label" for="tbr_email">Email address</label>
         <input class="uk-width-1-1 tm-field<?php if ( $message = beans_get( 'tbr_email', $errors ) ) echo ' tm-field-error'; ?>" type="email" value="<?php echo beans_post( 'tbr_email' ); ?>" placeholder="you@yourdomain.com" name="tbr_email" tabindex="3">
-        <?php if ( $message = beans_get( 'tbr_email', $errors ) ) echo '<p class="tm-error">' . $message . '</p>'; ?>
+        <?php if ( $message = beans_get( 'tbr_email', $errors ) ) echo '<p class="uk-form-danger">' . $message . '</p>'; ?>
       </div>
       <div class="uk-margin-bottom">
         <label class="uk-form-label" for="tbr_website">Website</label>
@@ -75,7 +75,7 @@ if ( beans_post( 'tbr_contact' ) == true ) {
       <div class="uk-width-1-1 uk-form-row tm-form-actions uk-margin-top">
         <label class="uk-form-label" for="tbr_message">Message</label>
         <textarea class="uk-form-large uk-width-1-1 tm-field<?php if ( $message = beans_get( 'tbr_message', $errors ) ) echo ' tm-field-error';?>" cols="13" rows="10" placeholder="Your message" name="tbr_message" tabindex="5"><?php echo beans_post( 'tbr_message' ); ?></textarea>
-        <?php if ( $message = beans_get( 'tbr_message', $errors ) ) echo '<p class="tm-error">' . $message . '</p>'; ?>
+        <?php if ( $message = beans_get( 'tbr_message', $errors ) ) echo '<p class="uk-form-danger">' . $message . '</p>'; ?>
       </div>
       <div class="uk-width-1-1 uk-form-row tm-form-actions uk-margin-top">
         <input type="hidden" name="tbr_contact" value="1"/>
