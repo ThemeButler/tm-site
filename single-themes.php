@@ -5,16 +5,19 @@ add_action( 'beans_before_load_document', 'tbr_modify_theme_single_markup' );
 
 function tbr_modify_theme_single_markup() {
 
-  beans_remove_markup( 'beans_main_grid' );
-  beans_remove_markup( 'beans_primary' );
-  beans_remove_attribute( 'beans_post', 'id' );
-  beans_remove_attribute( 'beans_post', 'class' );
   beans_remove_attribute( 'beans_body', 'class' );
   beans_add_attribute( 'beans_body', 'class', 'tm-theme' );
+  beans_remove_markup( 'beans_main_grid' );
+  beans_remove_markup( 'beans_fixed_wrap_main' );
+  beans_remove_markup( 'beans_primary' );
+  beans_remove_markup( 'beans_post' );
+  beans_remove_attribute( 'beans_post', 'id' );
+  beans_remove_attribute( 'beans_post', 'class' );
   beans_modify_action_hook( 'beans_post_title', 'beans_primary_menu_after_markup' );
   beans_add_attribute( 'beans_post_title', 'class', 'uk-text-center uk-margin-large-top' );
   beans_remove_action( 'beans_post_image' );
   beans_add_attribute( 'beans_header', 'class', 'uk-padding-bottom-remove' );
+  beans_remove_attribute( 'beans_main', 'class', ' uk-block-large' );
 
 }
 
@@ -88,15 +91,13 @@ function tbr_theme_intro( $excerpt ) {
 <? }
 
 
-// Add the portfolio single meta
-add_action( 'beans_header_after_markup', 'tbr_add_portfolio_sidebar' );
+// Add the theme summary
+add_action( 'beans_main_prepend_markup', 'tbr_add_theme_top' );
 
-function tbr_add_portfolio_sidebar() {
+function tbr_add_theme_top() {
 
   global $post;
 
-  $title = get_the_title($post->ID);
-  $lowercase_title = strtolower($title);
   $version = get_post_meta( $post->ID, 'version', true );
   $release_date = get_post_meta( $post->ID, 'release_date', true );
   $release_notes = get_post_meta( $post->ID, 'release_notes', true );
@@ -104,24 +105,25 @@ function tbr_add_portfolio_sidebar() {
   $designers_count = count($designers);
   $terms = get_the_terms($post->ID, 'theme_type');
   $terms_as_text = strip_tags( get_the_term_list( $post->ID, 'theme_type', '', ', ', '' ) );
-  $download_parent = '/wp-content/downloads/' . $lowercase_title . '-v'. $version . '.zip';
-  $download_child = '/wp-content/downloads/' . $lowercase_title . '-child.zip';
-  $download_sketch = '/wp-content/downloads/' . $lowercase_title . '-sketch.zip';
+
+  require_once( get_stylesheet_directory() . '/inc/theme-top.php' );
+
+}
+
+
+// Add the tabs to the theme single layout
+add_action( 'beans_post_prepend_markup', 'tbr_add_theme_tabs' );
+
+function tbr_add_theme_tabs() {
+
+  global $post;
+
+  $title = get_the_title($post->ID);
 
   require_once( get_stylesheet_directory() . '/inc/theme-menu.php' );
   require_once( get_stylesheet_directory() . '/inc/theme-content.php' );
 
 }
-
-// Add features page content
-add_action( "beans_post_append_markup", "tbr_theme_features" );
-
-function tbr_theme_features() { ?>
-
-
-
-<?php }
-
 
 // Load Beans
 beans_load_document();
