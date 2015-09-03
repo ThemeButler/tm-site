@@ -45,7 +45,7 @@ if ( beans_post( 'tbr_contact' ) == true ) {
 
   <?php }
 
-}
+} else {
 
 ?>
   <h1 class="uk-article-title">Say Hello</h1>
@@ -84,3 +84,4 @@ if ( beans_post( 'tbr_contact' ) == true ) {
     </div>
 
   </form>
+  <?php } ?>
