@@ -119,6 +119,11 @@ function tbr_add_theme_tabs() {
   global $post;
 
   $title = get_the_title($post->ID);
+  $lowercase_title = strtolower($title);
+  $version = get_post_meta( $post->ID, 'version', true );
+  $download_parent = '/wp-content/downloads/tm-' . $lowercase_title . '-v'. $version . '.zip';
+  $download_child = '/wp-content/downloads/tm-' . $lowercase_title . '-child.zip';
+  $download_sketch = '/wp-content/downloads/' . $lowercase_title . '-sketch.zip';
 
   require_once( get_stylesheet_directory() . '/inc/theme-menu.php' );
   require_once( get_stylesheet_directory() . '/inc/theme-content.php' );
