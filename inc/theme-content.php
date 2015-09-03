@@ -12,13 +12,13 @@
           <div>
             <img src="/wp-content/uploads/icon-parent-theme.svg" alt="" width="60" height="60" class="uk-float-left uk-margin-right uk-border-rounded">
             <h3 class="uk-margin-small">Parent-theme</h3>
-            <a href="<?php echo $download_parent; ?>" onclick="javascript:_paq.push(['trackEvent', 'Theme', 'Download' '<?php echo $title; ?>']);">Download <?php echo $lowercase_title . '-v'. $version . '.zip'; ?></a>
+            <a href="<?php echo $download_parent; ?>" onclick="javascript:_paq.push(['trackEvent', 'Theme', 'Download' '<?php echo $title; ?>']);">Download tm-<?php echo $lowercase_title . '-v'. $version . '.zip'; ?></a>
           </div>
 
           <div>
             <img src="/wp-content/uploads/icon-child-theme.svg" alt="" width="60" height="60" class="uk-float-left uk-margin-right uk-border-rounded">
             <h3 class="uk-margin-small">Child-theme</h3>
-            <a href="<?php echo $download_child; ?>" onclick="javascript:_paq.push(['trackEvent', 'Child Theme', 'Download' '<?php echo $title; ?>']);">Download <?php echo $lowercase_title . '-child.zip'; ?></a>
+            <a href="<?php echo $download_child; ?>" onclick="javascript:_paq.push(['trackEvent', 'Child Theme', 'Download' '<?php echo $title; ?>']);">Download tm-<?php echo $lowercase_title . '-child.zip'; ?></a>
           </div>
           <div>
             <img src="/wp-content/uploads/icon-sketch.svg" alt="" width="60" height="60" class="uk-float-left uk-margin-right uk-border-rounded">
