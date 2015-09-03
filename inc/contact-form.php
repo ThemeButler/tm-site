@@ -39,8 +39,8 @@ if ( beans_post( 'tbr_contact' ) == true ) {
 
     <div class="uk-text-center uk-block">
       <h2>Nice one! Your message is on its way to my inbox!</h2>
-      <p>Expect a reply within 24 hours.</p>
-      <a class="uk-button uk-button-primary uk-button-large uk-margin-top" href="<?php echo home_url(); ?>">Back to the site</a>
+      <p class="uk-article-lead">You can expect a reply within 24 hours. If you don't hear back by then, please <a href="mailto:chris@themebutler.com">email me</a> directly.</p>
+      <p class="uk-text-muted">In the mean time, be sure to check out our <a href="/" title="Premium quality WordPress themes, for free!">Free WordPress Themes</a> and other <a href="/resources/" title="Free stuff for WordPress">WordPress Goodies</a> ;)</p>
     </div>
 
   <?php }
