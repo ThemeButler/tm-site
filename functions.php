@@ -27,7 +27,6 @@ function tbr_enqueue_uikit_assets() {
 // Cleanup AdsPro
 remove_action('wp_enqueue_scripts', 'BSA_PRO_add_custom_stylesheet');
 remove_action('wp_enqueue_scripts', 'BSA_PRO_add_stylesheet_and_script');
-remove_action('wp_enqueue_scripts', 'muut_before_scripts_enqueued');
 
 
 // Remove unnecessary classes
@@ -196,4 +195,3 @@ do_action( 'themebutler_init' );
 // Includes
 require_once( get_stylesheet_directory() . '/inc/cleanup.php' );
 require_once( get_stylesheet_directory() . '/inc/alert.php' );
-require_once( get_stylesheet_directory() . '/admin/cpt.php' );
