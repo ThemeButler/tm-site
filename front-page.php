@@ -27,8 +27,8 @@ add_action( 'beans_fixed_wrap_header_append_markup', 'tbr_welcome' );
 function tbr_welcome() { ?>
 
   <div class="tm-welcome uk-block uk-contrast uk-margin-large-top uk-float-left uk-width-1-1">
-    <h1 class="uk-article-title uk-text-center">Premium WordPress Goodies - <strong>For Free!</strong></h1>
-    <p class="uk-margin-remove uk-h3 uk-text-center">An experiment in ad-supported themes. <a href="/blog/never-say-die/">Learn more</a></p>
+    <h1 class="uk-article-title uk-text-center">Premium WordPress Goodies <strong>For Free!</strong></h1>
+    <p class="uk-margin-remove uk-h3 uk-text-center">An experiment in ad-supported themes. <a href="/2015/09/never-say-die/">Learn more</a></p>
   </div>
 
 <? }
