@@ -501,8 +501,6 @@ main.tm-main {
     height: 56px;
     background: url(../../../../../wp-content/uploads/tbr-mark.svg) no-repeat;
   }
-}
-@media all and (max-width: @breakpoint-small) {
   .tm-bottom .tm-b-item:nth-last-child(-n + 3){
     display: none;
   }
@@ -583,6 +581,15 @@ main.tm-main {
   }
   .tm-ad-text {
     padding-left: 0;
+  }
+  .browser {
+    img {
+      max-width: 100%;
+      width: 100%;
+    }
+    .uk-overlay-panel {
+      padding: 0;
+    }
   }
 }
 @media all and (max-width: @breakpoint-large) {

@@ -41,7 +41,7 @@ function tbr_home_themes_loop( $query ) {
 
   $the_query = new WP_Query( array( 'post_type' => 'themes', 'posts_per_page' => '12', 'no_found_rows' => true ) ); ?>
 
-  <div class="uk-grid uk-grid-width-1-1 uk-grid-width-small-1-2" >
+  <div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-2" >
     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
 
     global $post;
