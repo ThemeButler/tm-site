@@ -523,7 +523,7 @@ main.tm-main {
     padding-bottom: 30px;
   }
 }
-@media all and (max-width: @breakpoint-medium) {
+@media all and (max-width: @breakpoint-medium-max) {
   .tm-header {
     h1 {
       font-size: 30px;
@@ -539,16 +539,6 @@ main.tm-main {
   }
   .tm-welcome {
     margin-top: 20px!important;
-  }
-  a.uk-button.uk-hidden-large {
-    float: right;
-    background-color: #FCC64C;
-    color: #fff;
-    font-size: 14px;
-    margin: 10px 10px 0 0;
-  }
-  .tm-header .uk-text-center {
-    text-align: left!important;
   }
   header.tm-header {
     h1 {
@@ -590,6 +580,16 @@ main.tm-main {
     .uk-overlay-panel {
       padding: 0;
     }
+  }
+  a.uk-button.uk-hidden-large {
+    float: right;
+    background-color: #FCC64C;
+    color: #fff;
+    font-size: 14px;
+    margin: 10px 10px 0 0;
+  }
+  .tm-header .uk-text-center {
+    text-align: left!important;
   }
 }
 @media all and (max-width: @breakpoint-large) {
@@ -669,6 +669,15 @@ main.tm-main {
   .tm-top {
     padding: 30px 3px;
   }
+  .tm-resources .tm-item,
+  .tm-pricing-item {
+    margin-top: 0 !important;
+    margin-bottom: 30px!important;
+  }
+  .tm-resources .tm-item:last-of-type,
+  .tm-pricing-item:last-of-type {
+      margin-bottom: 0!important;
+  }
 }
 @media all and (max-width: @breakpoint-large-max) {
   .tm-main {
@@ -676,6 +685,9 @@ main.tm-main {
   }
   .tm-home .tm-main {
     padding-bottom: 0;
+  }
+  .tm-header div.uk-text-center {
+    padding: 0 30px;
   }
 }
 @media all and (min-width: @breakpoint-xlarge) {
