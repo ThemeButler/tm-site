@@ -75,7 +75,9 @@ function tbr_setup_theme() {
   beans_remove_attribute( 'beans_post', 'id' );
   beans_modify_action_hook( 'beans_footer', 'beans_main_after_markup' );
   beans_replace_attribute( 'beans_menu_navbar_primary', 'class', 'uk-visible-large', 'uk-hidden-small' );
-  beans_replace_attribute( 'beans_primary_menu_offcanvas_button', 'class', 'uk-hidden-large', 'uk-visible-small uk-button-primary uk-float-right uk-margin-top' );
+  beans_replace_attribute( 'beans_primary_menu_offcanvas_button', 'class', 'uk-hidden-small', 'uk-visible-small uk-button-primary uk-float-right uk-margin-top' );
+  beans_add_attribute( 'beans_widget_area_offcanvas_bar_offcanvas_menu', 'class', ' uk-offcanvas-bar-flip' );
+  beans_remove_attribute( 'beans_menu_offcanvas', 'data-uk-nav', 'multiple:true' );
 
 }
 
@@ -158,9 +160,9 @@ beans_modify_action_callback( 'beans_footer_content', 'tbr_footer' );
 
 function tbr_footer() { ?>
 
-  <div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-2 uk-margin-top uk-margin-large-bottom uk-text-muted">
-    <div class="tm-copyright">&#169; ThemeButler <?php echo date('Y'); ?>. All rights reserved. A <a href="http://webmonkeys.co.za" target="_blank">Web Monkeys</a> Production.</div>
-    <div class="tm-credits uk-text-right">Built with <a href="https://getbeans.io" target="_blank" title="Build Smarter with Beans.">Beans</a>. Powered by <a href="http://wordpress.org" target="_blank">WordPress</a>.</div>
+  <div class="uk-grid uk-grid-width-1-1 uk-grid-width-small-1-2 uk-margin-top uk-margin-large-bottom uk-text-muted">
+    <div class="tm-copyright">&#169; ThemeButler <?php echo date('Y'); ?>. All rights reserved.</div>
+    <div class="tm-credits uk-text-right">Built with <a href="https://getbeans.io" target="_blank" title="Build Smarter with Beans.">Beans</a> and <a href="http://wordpress.org" target="_blank">WordPress</a>.</div>
   </div>
   <!-- Piwik -->
   <script type="text/javascript">

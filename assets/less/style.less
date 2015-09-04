@@ -403,6 +403,15 @@ main.tm-main {
 @bp-xl:     90em; /* 90 x 16 = 1440px */
 @bp-xxl:    105em; /* 105 x 16 = 1680px */
 
+@breakpoint-small:                              480px;
+@breakpoint-medium:                             768px;
+@breakpoint-large:                              960px;
+@breakpoint-xlarge:                             1220px;
+
+@breakpoint-mini-max:                           (@breakpoint-small - 1);
+@breakpoint-small-max:                          (@breakpoint-medium - 1);
+@breakpoint-medium-max:                         (@breakpoint-large - 1);
+@breakpoint-large-max:                          (@breakpoint-xlarge - 1);
 
 /**
 * CSS based browser wrapper
@@ -461,7 +470,7 @@ main.tm-main {
 * Adjust the layout at different breakpoints
 */
 
-@media all and (min-width: @bp-xs) {
+@media all and (max-width: @breakpoint-mini-max) {
   nav.tm-primary-menu.uk-navbar {
     margin: 0;
     float: none;
@@ -481,14 +490,42 @@ main.tm-main {
   .browser-container--stack {
     padding: 25% 0;
   }
+  .tm-media-block .uk-thumbnail {
+    padding: 1px;
+  }
+  img.tm-logo {
+    display: none;
+  }
+  a.tm-logo {
+    width: 70px;
+    height: 56px;
+    background: url(../../../../../wp-content/uploads/tbr-mark.svg) no-repeat;
+  }
 }
-
-@media all and (min-width: @bp-small) {
+@media all and (max-width: @breakpoint-small) {
+  .tm-bottom .tm-b-item:nth-last-child(-n + 3){
+    display: none;
+  }
+  .tm-footer {
+    padding: 20px 5px;
+    text-align: center;
+  }
+  .tm-footer div {
+    width: 100%;
+    text-align: center!important;
+    float: none;
+    padding: 0;
+  }
+  .tm-newsletter .uk-button{
+    margin-top: 15px;
+  }
+}
+@media all and (min-width: @breakpoint-medium) {
   .tm-home .tm-header {
     padding-bottom: 30px;
   }
 }
-@media all and (max-width: @bp-small) {
+@media all and (max-width: @breakpoint-medium) {
   .tm-header {
     h1 {
       font-size: 30px;
@@ -498,8 +535,9 @@ main.tm-main {
       margin-bottom: 20px!important;
     }
   }
-  .tm-top .uk-grid > div:first-of-type {
-    margin: 10px 0 30px;
+  .tm-top .tm-b-item:first-of-type {
+    margin: 15px 0 30px;
+    display: none;
   }
   .tm-welcome {
     margin-top: 20px!important;
@@ -511,13 +549,13 @@ main.tm-main {
     font-size: 14px;
     margin: 10px 10px 0 0;
   }
-  .uk-text-center {
+  .tm-header .uk-text-center {
     text-align: left!important;
   }
-  .tm-header {
+  header.tm-header {
     h1 {
       margin: 20px 0 10px;
-      font-size: 28px;
+      font-size: 25px;
     }
   }
   .tm-logo {
@@ -530,8 +568,24 @@ main.tm-main {
       line-height: 36px;
     }
   }
+  .tm-top .tm-b-item {
+    width: 100%;
+    margin: 0;
+  }
+  .tm-bottom .tm-b-item:nth-last-child(-n + 2){
+    display: none;
+  }
+  .tm-footer .uk-grid {
+      margin: 0!important;
+  }
+  .tm-copyright {
+      padding: 0;
+  }
+  .tm-ad-text {
+    padding-left: 0;
+  }
 }
-@media all and (max-width: @bp-medium) {
+@media all and (max-width: @breakpoint-large) {
   .tm-header {
     h1 {
       font-size: 35px;
@@ -568,8 +622,18 @@ main.tm-main {
   .tm-home .tm-main {
     padding-bottom: 0;
   }
+  .uk-article-title {
+    font-size: 22px;
+    line-height: 22px;
+  }
+  .tm-newsletter .uk-container {
+    padding: 20px 30px;
+  }
+  .tm-bottom.tm-media-block.uk-block {
+    padding: 25px 0;
+  }
 }
-@media all and (min-width: @bp-medium) {
+@media all and (min-width: @breakpoint-small) {
   .tm-header h1 strong {
     display: inline;
   }
@@ -594,7 +658,20 @@ main.tm-main {
     }
   }
 }
-@media all and (min-width: @bp-xxl) {
+@media all and (max-width: @breakpoint-medium-max) {
+  .tm-top {
+    padding: 30px 3px;
+  }
+}
+@media all and (max-width: @breakpoint-large-max) {
+  .tm-main {
+    padding: 40px 0;
+  }
+  .tm-home .tm-main {
+    padding-bottom: 0;
+  }
+}
+@media all and (min-width: @breakpoint-xlarge) {
   .browser-container--stack {
     padding: 0;
     height: 820px;
