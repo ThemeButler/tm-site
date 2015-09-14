@@ -55,13 +55,13 @@
         <hr class="uk-article-divider">
         <div class="uk-grid uk-grid-width-1-2">
           <div>
-            <figure class="uk-thumbnail uk-float-right uk-margin-left uk-margin-large-top"><a href="" target="_blank"><img src="/wp-content/uploads/community.svg" width="125" height="125" alt="Community support for <?php echo $title; ?>"></a></figure>
+            <figure class="uk-thumbnail uk-float-right uk-margin-left uk-margin-large-top"><a href="" target="_blank"><img src="http://themebutler.webmonkeys.netdna-cdn.com/wp-content/uploads/community.svg" width="125" height="125" alt="Community support for <?php echo $title; ?>"></a></figure>
             <h4>Community Forum</h4>
             <p>While I don't officially provide support for <?php echo $title; ?>, there is a Community discussion forum, where members can help each other.</p>
             <a href="http://community.themebutler.com/t/<?php echo $lowercase_title; ?>" class="uk-button">Ask a question about <?php echo $title; ?></a>
           </div>
           <div>
-            <figure class="uk-thumbnail uk-float-right uk-margin-left uk-margin-large-top"><a href="/?bsa_pro_id=23&amp;bsa_pro_url=1" target="_blank"><img src="/wp-content/uploads/bsa-pro-upload/1441178031-banner-codeable-white-125.png" width="125" height="125" alt="WordPress Experts On Demand"></a></figure>
+            <figure class="uk-thumbnail uk-float-right uk-margin-left uk-margin-large-top"><a href="/?bsa_pro_id=23&amp;bsa_pro_url=1" target="_blank"><img src="http://themebutler.webmonkeys.netdna-cdn.com/wp-content/uploads/bsa-pro-upload/1441270951-banner-codeable-125.png" width="125" height="125" alt="WordPress Experts On Demand"></a></figure>
             <h4>Get help on Codeable</h4>
             <p>Need help customizing <?php echo $title; ?>? Codeable is a network of highly skilled WordPress developers, that are available for projects big and small.</p>
             <a href="https://api.referoo.co/s/0gFdE" class="uk-button">Get a free quote</a>
