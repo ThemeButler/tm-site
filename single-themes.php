@@ -48,7 +48,7 @@ function tbr_theme_intro( $excerpt ) {
   $thumb_id = get_post_thumbnail_id();
   $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full-size', true);
   $resized_src = beans_edit_image( $thumb_url_array[0], array(
-    'crop' => array( 0, 0, 904, 406 )
+    'resize' => array( 904, false )
   ) );
 
   ?>
