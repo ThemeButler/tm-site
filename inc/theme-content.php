@@ -57,7 +57,7 @@
           <div>
             <figure class="uk-thumbnail uk-float-right uk-margin-left uk-margin-large-top">
               <a href="http://community.themebutler.com/t/<?php echo $lowercase_title; ?>" target="_blank">
-                <img src="http://themebutler.webmonkeys.netdna-cdn.com/wp-content/uploads/community.svg" width="125" height="125" alt="Community support for <?php echo $title; ?>">
+                <img src="<?php echo home_url( '/wp-content/uploads/community.svg' ); ?>" width="125" height="125" alt="Community support for <?php echo $title; ?>">
               </a>
             </figure>
             <h4>Community Forum</h4>
