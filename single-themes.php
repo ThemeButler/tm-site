@@ -98,6 +98,8 @@ function tbr_add_theme_top() {
 
   global $post;
 
+  $title = get_the_title($post->ID);
+  $lowercase_title = strtolower($title);
   $version = get_post_meta( $post->ID, 'version', true );
   $release_date = get_post_meta( $post->ID, 'release_date', true );
   $release_notes = get_post_meta( $post->ID, 'release_notes', true );

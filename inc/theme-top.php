@@ -1,7 +1,7 @@
 <div class="tm-top tm-media-block uk-block tm-theme-info">
   <div class="uk-container uk-container-center">
     <ul class="uk-subnav uk-margin-remove">
-      <li>Version <span><a href="#js-release-notes" data-uk-modal><?php echo $version; ?></a></span></li>
+      <li>Version <span><a href="https://github.com/ThemeButler/tm-<?php echo $lowercase_title; ?>/releases" target="_blank" rel="nofollow" title="View the release notes for <?php echo $title; ?> on Github"><?php echo $version; ?></a></span></li>
       <li>Type: <span><?php echo $terms_as_text; ?></span></li>
       <li>Released: <span><?php echo $release_date; ?></span></li>
       <li>Designer: <span><?php if($designers_count > 0) { foreach ($designers as $designer) { echo $designer->name; } } ?></span></li>
