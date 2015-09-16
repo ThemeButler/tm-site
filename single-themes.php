@@ -27,7 +27,7 @@ add_action( 'beans_uikit_enqueue_scripts', 'tbr_enque_uikit_theme_single' );
 
 function tbr_enque_uikit_theme_single() {
 
-  beans_uikit_enqueue_components( array( 'animation', 'contrast', 'close', 'subnav', 'icon', 'switcher', 'modal' ) );
+  beans_uikit_enqueue_components( array( 'contrast', 'subnav', 'icon', 'switcher' ) );
 
 }
 
