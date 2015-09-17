@@ -39,7 +39,7 @@ beans_modify_action_callback( 'beans_loop_template', 'tbr_home_themes_loop' );
 
 function tbr_home_themes_loop( $query ) {
 
-  $the_query = new WP_Query( array( 'post_type' => 'themes', 'posts_per_page' => '12', 'no_found_rows' => true ) ); ?>
+  $the_query = new WP_Query( array( 'post_type' => 'themes', 'posts_per_page' => '4', 'no_found_rows' => true ) ); ?>
 
   <div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-2" >
     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
@@ -54,7 +54,7 @@ function tbr_home_themes_loop( $query ) {
     $thumb_id = get_post_thumbnail_id();
     $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full-size', true);
     $resized_src = beans_edit_image( $thumb_url_array[0], array(
-    'resize' => array( 0, 0, 530, 200, true )
+      'resize' => array( 0, 0, 530, 200, true )
     ) );
 
     ?>
