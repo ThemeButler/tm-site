@@ -55,7 +55,7 @@ function tbr_theme_intro( $excerpt ) {
 
   <p class="uk-article-lead uk-text-center"><?php echo the_excerpt(); ?></p>
   <div class="uk-text-center">
-    <a href="<?php echo $download_url; ?>" class="uk-button uk-button-large uk-button-primary uk-margin-right" target="_blank" onclick="javascript:_paq.push(['trackEvent', 'Theme', 'Download' '<?php echo $title; ?>']);">Download for <strong>Free</strong>!</a>
+    <a href="<?php echo $download_url; ?>" class="uk-button uk-button-large uk-button-primary uk-margin-right" onclick="javascript:_paq.push(['trackEvent', 'Theme', 'Download' '<?php echo $title; ?>']);">Download for <strong>Free</strong>!</a>
     <a href="<?php echo $demo_url; ?>" class="uk-button uk-button-tertiary uk-button-large" target="_blank" onclick="javascript:_paq.push(['trackEvent', 'Theme', 'Demo' '<?php echo $title; ?>']);">View the demo</a>
     <div class="tm-post-nav uk-grid uk-grid-small uk-grid-width-1-2 uk-position-relative">
       <div class="tm-prev uk-text-left">
