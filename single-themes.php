@@ -44,7 +44,7 @@ function tbr_theme_intro( $excerpt ) {
   $release_date = get_post_meta( $post->ID, 'release_date', true );
   $version = get_post_meta( $post->ID, 'version', true );
   $demo_url = 'http://demo.themebutler.com/' . $lowercase_title . '/';
-  $download_url = '/wp-content/downloads/tm-' . $lowercase_title . '-v'. $version . '.zip';
+  $download_url = 'https://github.com/ThemeButler/tm-' . $lowercase_title . '/releases/download/'. $version . '/tm-' . $lowercase_title . '-v'. $version . '.zip';
   $thumb_id = get_post_thumbnail_id();
   $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full-size', true);
   $resized_src = beans_edit_image( $thumb_url_array[0], array(

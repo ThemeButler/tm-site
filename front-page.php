@@ -49,8 +49,8 @@ function tbr_home_themes_loop( $query ) {
     $title = get_the_title($post->ID);
     $lowercase_title = strtolower($title);
     $version = get_post_meta( $post->ID, 'version', true );
-    $theme_demo_url = 'http://demo.themebutler.com/' . $lowercase_title . '/';
-    $theme_download_url = '/wp-content/downloads/tm-' . $lowercase_title . '-v'. $version . '.zip';
+    $demo_url = 'http://demo.themebutler.com/' . $lowercase_title . '/';
+    $download_url = 'https://github.com/ThemeButler/tm-' . $lowercase_title . '/releases/download/'. $version . '/tm-' . $lowercase_title . '-v'. $version . '.zip';
     $thumb_id = get_post_thumbnail_id();
     $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full-size', true);
     $resized_src = beans_edit_image( $thumb_url_array[0], array(
@@ -73,8 +73,8 @@ function tbr_home_themes_loop( $query ) {
                 <img src="<?php echo $resized_src; ?>" class="uk-overlay-scale" width="490" alt="<?php echo the_title(); ?>" />
                 <figcaption class="uk-panel uk-panel-box uk-uk-padding-bottom-remove uk-overlay-panel uk-overlay-background">
                   <a href="<?php echo get_permalink(); ?>" class="uk-button uk-button-large uk-display-block uk-margin-bottom">Learn more</a>
-                  <a href="<?php echo $theme_demo_url; ?>" class="uk-button uk-button-large uk-display-block uk-margin-bottom uk-button-tertiary" target="_blank" onclick="javascript:_paq.push(['trackEvent', 'Theme', 'Demo' '<?php echo $title; ?>']);">View a demo</a>
-                  <a href="<?php echo $theme_download_url; ?>" class="uk-button uk-button-large uk-display-block uk-button-primary" onclick="javascript:_paq.push(['trackEvent', 'Theme', 'Download' '<?php echo $title; ?>']);">Download v<?php echo $version; ?></a>
+                  <a href="<?php echo $demo_url; ?>" class="uk-button uk-button-large uk-display-block uk-margin-bottom uk-button-tertiary" target="_blank" onclick="javascript:_paq.push(['trackEvent', 'Theme', 'Demo' '<?php echo $title; ?>']);">View a demo</a>
+                  <a href="<?php echo $download_url; ?>" class="uk-button uk-button-large uk-display-block uk-button-primary" onclick="javascript:_paq.push(['trackEvent', 'Theme', 'Download' '<?php echo $title; ?>']);">Download v<?php echo $version; ?></a>
                 </figcaption>
             </figure>
           </div>
