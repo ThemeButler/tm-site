@@ -49,9 +49,8 @@ function tbr_home_themes_loop( $query ) {
     $title = get_the_title($post->ID);
     $lowercase_title = strtolower($title);
     $version = get_post_meta( $post->ID, 'version', true );
-    $demo_url = get_post_meta( $post->ID, 'demo_url', true );
+    $demo_url = 'http://demo.themebutler.com/' . $lowercase_title . '/';
     $download_url = '/wp-content/downloads/tm-' . $lowercase_title . '-v'. $version . '.zip';
-    $demo_url = get_post_meta( $post->ID, 'demo_url', true );
     $thumb_id = get_post_thumbnail_id();
     $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full-size', true);
     $resized_src = beans_edit_image( $thumb_url_array[0], array(
