@@ -48,40 +48,39 @@ if ( beans_post( 'tbr_contact' ) == true ) {
 } else {
 
 ?>
-  <h1 class="uk-article-title">Say Hello</h1>
-  <p class="uk-article-lead">Got something you'd like to discuss, or interested in an ad package? Fill out the form below and I'll get back to you asap.</p>
+  <h1 class="uk-article-title uk-text-center">Say Hello</h1>
+  <p class="tm-excerpt uk-article-lead uk-text-center">Got something you'd like to discuss, or interested in an ad package? Fill out the form below and I'll get back to you asap. Please post on the <a href="http://community.themebutler.com">Community Forum</a> for support related queries.</p>
   <hr class="uk-article-divider">
-  <form method="post" class="uk-form" data-tm-form>
+  <form id="contact-form" name="contact-form" method="post" class="uk-form" data-tm-form>
     <div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-2 uk-margin-bottom">
       <div class="uk-margin-bottom">
-        <label class="uk-form-label" for="tbr_first">First name <span>*</span></label>
-        <input class="uk-width-1-1 tm-field<?php if ( $message = beans_get( 'tbr_first', $errors ) ) echo ' tm-field-error'; ?>" type="text" value="<?php echo beans_post( 'tbr_first' ); ?>" placeholder="First name" name="tbr_first" autofocus tabindex="1">
+        <label class="uk-form-label" for="tbr_first">First <span>*</span></label>
+        <input class="uk-width-1-1 tm-field<?php if ( $message = beans_get( 'tbr_first', $errors ) ) echo ' tm-field-error'; ?>" type="text" value="<?php echo beans_post( 'tbr_first' ); ?>" placeholder="Eg, John" name="tbr_first" autofocus tabindex="1">
         <?php if ( $message = beans_get( 'tbr_first', $errors ) ) echo '<p class="uk-form-danger">' . $message . '</p>'; ?>
       </div>
       <div class="uk-margin-bottom">
-        <label class="uk-form-label" for="tbr_last">Last name <span>*</span></label>
-        <input class="uk-width-1-1 tm-field<?php if ( $message = beans_get( 'tbr_last', $errors ) ) echo ' tm-field-error'; ?>" type="text" value="<?php echo beans_post( 'tbr_last' ); ?>" placeholder="Last name" name="tbr_last" tabindex="2">
+        <label class="uk-form-label" for="tbr_last">Last <span>*</span></label>
+        <input class="uk-width-1-1 tm-field<?php if ( $message = beans_get( 'tbr_last', $errors ) ) echo ' tm-field-error'; ?>" type="text" value="<?php echo beans_post( 'tbr_last' ); ?>" placeholder="Eg, Smith" name="tbr_last" tabindex="2">
         <?php if ( $message = beans_get( 'tbr_last', $errors ) ) echo '<p class="uk-form-danger">' . $message . '</p>'; ?>
       </div>
       <div class="uk-margin-bottom">
-        <label class="uk-form-label" for="tbr_email">Email address <span>*</span></label>
-        <input class="uk-width-1-1 tm-field<?php if ( $message = beans_get( 'tbr_email', $errors ) ) echo ' tm-field-error'; ?>" type="email" value="<?php echo beans_post( 'tbr_email' ); ?>" placeholder="you@yourdomain.com" name="tbr_email" tabindex="3">
+        <label class="uk-form-label" for="tbr_email">Email <span>*</span></label>
+        <input class="uk-width-1-1 tm-field<?php if ( $message = beans_get( 'tbr_email', $errors ) ) echo ' tm-field-error'; ?>" type="email" value="<?php echo beans_post( 'tbr_email' ); ?>" placeholder="Eg, you@yourdomain.com" name="tbr_email" tabindex="3">
         <?php if ( $message = beans_get( 'tbr_email', $errors ) ) echo '<p class="uk-form-danger">' . $message . '</p>'; ?>
       </div>
       <div class="uk-margin-bottom">
         <label class="uk-form-label" for="tbr_website">Website (optional)</label>
-        <input class="uk-width-1-1 tm-field" type="text" value="<?php echo beans_post( 'tbr_website' ); ?>" placeholder="http://yourwebsite.com" name="tbr_website" tabindex="4">
+        <input class="uk-width-1-1 tm-field" type="text" value="<?php echo beans_post( 'tbr_website' ); ?>" placeholder="Eg, http://yourwebsite.com" name="tbr_website" tabindex="4">
       </div>
       <div class="uk-width-1-1 uk-form-row tm-form-actions uk-margin-top">
         <label class="uk-form-label" for="tbr_message">Message <span>*</span></label>
-        <textarea class="uk-form-large uk-width-1-1 tm-field<?php if ( $message = beans_get( 'tbr_message', $errors ) ) echo ' tm-field-error';?>" cols="13" rows="10" placeholder="Your message" name="tbr_message" tabindex="5"><?php echo beans_post( 'tbr_message' ); ?></textarea>
+        <textarea class="uk-form-large uk-width-1-1 tm-field<?php if ( $message = beans_get( 'tbr_message', $errors ) ) echo ' tm-field-error';?>" cols="13" rows="10" placeholder="What is this concerning?" name="tbr_message" tabindex="5"><?php echo beans_post( 'tbr_message' ); ?></textarea>
         <?php if ( $message = beans_get( 'tbr_message', $errors ) ) echo '<p class="uk-form-danger">' . $message . '</p>'; ?>
       </div>
-      <div class="uk-width-1-1 uk-form-row tm-form-actions uk-margin-top">
+      <div class="uk-width-1-1 uk-form-row tm-form-actions uk-margin-top uk-text-center">
         <input type="hidden" name="tbr_contact" value="1"/>
-        <button class="uk-button uk-button-primary uk-button-large uk-margin-top" name="tbr_submit" tabindex="6"><?php _e( 'Send', 'themebutler' ); ?></button>
+        <button class="uk-button uk-button-primary uk-button-large uk-margin-top" name="tbr_submit" tabindex="6"><?php _e( 'Send your message', 'themebutler' ); ?></button>
       </div>
     </div>
-
   </form>
   <?php } ?>

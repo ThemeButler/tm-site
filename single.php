@@ -21,7 +21,7 @@ add_action( 'beans_uikit_enqueue_scripts', 'tbr_enque_uikit_blog_single' );
 
 function tbr_enque_uikit_blog_single() {
 
-  beans_uikit_enqueue_components( array( 'subnav', 'comment', 'badge' ) );
+  beans_uikit_enqueue_components( array( 'subnav', 'comment', 'badge', 'list', 'article', 'pagination' ) );
 
 }
 

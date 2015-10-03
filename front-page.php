@@ -21,70 +21,55 @@ function tbr_enque_uikit_page() {
 
 }
 
-// Add the bottom widget area
-add_action( 'beans_fixed_wrap_header_append_markup', 'tbr_welcome' );
-
-function tbr_welcome() { ?>
-
-  <div class="tm-welcome uk-block uk-contrast uk-margin-large-top uk-float-left uk-width-1-1">
-    <h1 class="uk-article-title uk-text-center">Premium WordPress Goodies <strong>For Free!</strong></h1>
-    <p class="uk-margin-remove uk-h3 uk-text-center">An experiment in ad-supported themes. <a href="/2015/09/never-say-die/">Learn more</a></p>
-  </div>
-
-<? }
-
+// Show loaded UIkit components
+// add_action( 'wp_enqueue_scripts', 'dfh_print_uikit_array' );
+// function dfh_print_uikit_array() {
+//   global $_beans_uikit_enqueued_items;
+//
+//   print '<pre>';
+//   print_r( $_beans_uikit_enqueued_items );
+//   print '</pre>';
+//
+// }
 
 // Modify the loop output
 beans_modify_action_callback( 'beans_loop_template', 'tbr_home_themes_loop' );
 
 function tbr_home_themes_loop( $query ) {
 
-  $the_query = new WP_Query( array( 'post_type' => 'themes', 'posts_per_page' => '4', 'no_found_rows' => true ) ); ?>
+  $the_query = new WP_Query( array( 'post_type' => 'themes', 'posts_per_page' => '3', 'no_found_rows' => true ) ); ?>
 
-  <div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-2" >
+  <div class="tm-home uk-text-center">
+    <h2 class="uk-margin-remove-top">Looking for a child-theme for Beans?</h2>
+    <p class="uk-article-lead tm-excerpt">Browse our growing collection of free child-themes for Beans. They don’t have any complicated configuration options, are heavily optimized for performance and are easy to customize. </p>
+    <div class="tm-themes uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-3 uk-margin-large-top" >
+
     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
 
     global $post;
 
     $title = get_the_title($post->ID);
     $lowercase_title = strtolower($title);
-    $version = get_post_meta( $post->ID, 'version', true );
-    $demo_url = 'http://demo.themebutler.com/' . $lowercase_title . '/';
-    $download_url = 'https://github.com/ThemeButler/tm-' . $lowercase_title . '/releases/download/'. $version . '/tm-' . $lowercase_title . '-v'. $version . '.zip';
     $thumb_id = get_post_thumbnail_id();
     $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full-size', true);
     $resized_src = beans_edit_image( $thumb_url_array[0], array(
-      'resize' => array( 0, 0, 530, 200, true )
+      'resize' => array( 340, 259, false )
     ) );
 
     ?>
-    <div class="tm-item uk-margin-large-bottom">
-      <div class="uk-panel-box-secondary uk-border-rounded uk-text-center">
-        <h2 class="uk-margin-bottom"><?php echo the_title(); ?></h2>
-        <p class="uk-article-lead uk-text-center"><?php echo the_excerpt(); ?></p>
-        <div class="browser-container uk-margin-top">
-          <div class="browser">
-            <div class="browser__top">
-              <div class="browser__button"></div>
-              <div class="browser__button"></div>
-              <div class="browser__button"></div>
-            </div>
-            <figure class="browser__img uk-overlay uk-overlay-hover uk-padding-top-remove uk-padding-bottom-remove">
-                <img src="<?php echo $resized_src; ?>" class="uk-overlay-scale" width="490" alt="<?php echo the_title(); ?>" />
-                <figcaption class="uk-panel uk-panel-box uk-uk-padding-bottom-remove uk-overlay-panel uk-overlay-background">
-                  <a href="<?php echo get_permalink(); ?>" class="uk-button uk-button-large uk-display-block uk-margin-bottom">Learn more</a>
-                  <a href="<?php echo $demo_url; ?>" class="uk-button uk-button-large uk-display-block uk-margin-bottom uk-button-tertiary" target="_blank" onclick="javascript:_paq.push(['trackEvent', 'Theme', 'Demo' '<?php echo $title; ?>']);">View a demo</a>
-                  <a href="<?php echo $download_url; ?>" class="uk-button uk-button-large uk-display-block uk-button-primary" onclick="javascript:_paq.push(['trackEvent', 'Theme', 'Download' '<?php echo $title; ?>']);">Download v<?php echo $version; ?></a>
-                </figcaption>
-            </figure>
-          </div>
-        </div>
+      <div class="tm-item uk-margin-medium-bottom">
+        <figure class="uk-overlay uk-overlay-hover">
+          <img src="<?php echo $resized_src; ?>" class="uk-thumbnail" width="400">
+          <figcaption class="uk-overlay-panel uk-overlay-background uk-overlay-fade"><?php echo the_title(); ?></figcaption>
+          <a class="uk-position-cover" href="<?php echo get_permalink(); ?>"></a>
+      </figure>
+
       </div>
-    </div>
     <?php endwhile; else: ?>
       <div>Sorry, there are no posts to display</div>
     <?php endif; ?>
     </div>
+  </div>
   <?php
 
   wp_reset_query();

@@ -7,33 +7,29 @@ function tbr_modify_theme_single_markup() {
 
   beans_remove_attribute( 'beans_body', 'class' );
   beans_add_attribute( 'beans_body', 'class', 'tm-theme' );
-  beans_remove_markup( 'beans_main_grid' );
-  beans_remove_markup( 'beans_fixed_wrap_main' );
   beans_remove_markup( 'beans_primary' );
-  beans_remove_markup( 'beans_post' );
-  beans_remove_attribute( 'beans_post', 'id' );
-  beans_remove_attribute( 'beans_post', 'class' );
-  beans_modify_action_hook( 'beans_post_title', 'beans_primary_menu_after_markup' );
-  beans_add_attribute( 'beans_post_title', 'class', 'uk-text-center uk-margin-large-top' );
   beans_remove_action( 'beans_post_image' );
-  beans_add_attribute( 'beans_header', 'class', 'uk-padding-bottom-remove' );
-  beans_remove_attribute( 'beans_main', 'class', ' uk-block-large' );
+  beans_remove_action( 'beans_post_title' );
+  beans_remove_markup( 'beans_main_grid' );
+  beans_remove_markup( 'beans_post_header' );
+  beans_remove_markup( 'beans_post_body' );
+  beans_remove_markup( 'beans_post_content' );
+  beans_replace_attribute( 'beans_post', 'class', 'uk-panel-box', 'tm-theme-single uk-article' );
 
 }
-
 
 // Include the needed uikit components
 add_action( 'beans_uikit_enqueue_scripts', 'tbr_enque_uikit_theme_single' );
 
 function tbr_enque_uikit_theme_single() {
 
-  beans_uikit_enqueue_components( array( 'contrast', 'subnav', 'icon', 'switcher' ) );
+  beans_uikit_enqueue_components( array( 'article', 'contrast', 'subnav', 'icon', 'list' ) );
+  beans_uikit_enqueue_components( array( 'tooltip' ), 'add-ons' );
 
 }
 
-
 // Add the excerpt
-add_action( "beans_post_title_after_markup", "tbr_theme_intro" );
+add_action( "beans_post_prepend_markup", "tbr_theme_intro" );
 
 function tbr_theme_intro( $excerpt ) {
 
@@ -41,96 +37,89 @@ function tbr_theme_intro( $excerpt ) {
 
   $title = get_the_title($post->ID);
   $lowercase_title = strtolower($title);
-  $release_date = get_post_meta( $post->ID, 'release_date', true );
   $version = get_post_meta( $post->ID, 'version', true );
+  //$download_parent = 'https://github.com/ThemeButler/tm-' . $lowercase_title . '/releases/download/'. $version . '/tm-' . $lowercase_title . '-v'. $version . '.zip?no_cache=1';
+  $download_child = '/wp-content/downloads/tm-' . $lowercase_title . '-child.zip?no_cache=1';
+  $download_sketch = '/wp-content/downloads/' . $lowercase_title . '-source.zip?no_cache=1';
+  $release_date = get_post_meta( $post->ID, 'release_date', true );
   $demo_url = 'http://demo.themebutler.com/' . $lowercase_title . '/';
-  $download_url = 'https://github.com/ThemeButler/tm-' . $lowercase_title . '/releases/download/'. $version . '/tm-' . $lowercase_title . '-v'. $version . '.zip';
+  $terms = get_the_terms($post->ID, 'theme_type');
+  $terms_as_text = strip_tags( get_the_term_list( $post->ID, 'theme_type', '', ', ', '' ) );
   $thumb_id = get_post_thumbnail_id();
   $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full-size', true);
   $resized_src = beans_edit_image( $thumb_url_array[0], array(
-    'resize' => array( 904, false )
+    'resize' => array( 750, false )
   ) );
 
   ?>
-
-  <p class="uk-article-lead uk-text-center"><?php echo the_excerpt(); ?></p>
-  <div class="uk-text-center">
-    <a href="<?php echo $download_url; ?>" class="uk-button uk-button-large uk-button-primary uk-margin-right" onclick="javascript:_paq.push(['trackEvent', 'Theme', 'Download' '<?php echo $title; ?>']);">Download for <strong>Free</strong>!</a>
-    <a href="<?php echo $demo_url; ?>" class="uk-button uk-button-tertiary uk-button-large" target="_blank" onclick="javascript:_paq.push(['trackEvent', 'Theme', 'Demo' '<?php echo $title; ?>']);">View the demo</a>
-    <div class="tm-post-nav uk-grid uk-grid-small uk-grid-width-1-2 uk-position-relative">
-      <div class="tm-prev uk-text-left">
-        <?php
-          $prev_post = get_previous_post();
-          if($prev_post) {
-             $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
-             echo '<a rel="prev" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_title. '" class="uk-icon-button uk-icon-hand-o-left uk-animation-hover uk-animation-fade"></a>';
-          }
-        ?>
-      </div>
-      <div class="tm-next uk-text-right">
-        <?
-          $next_post = get_next_post();
-          if($next_post) {
-             $next_title = strip_tags(str_replace('"', '', $next_post->post_title));
-             echo '<a rel="next" href="' . get_permalink($next_post->ID) . '" title="' . $next_title. '" class="uk-icon-button uk-icon-hand-o-right uk-animation-hover uk-animation-fade"></a>';
-          }
-        ?>
-      </div>
+  <div class="uk-grid">
+    <div class="tm-image uk-width-small-1-1 uk-width-medium-3-5 uk-margin-large-bottom">
+      <figure class="uk-thumbnail">
+        <img src="<?php echo $resized_src; ?>" width="750" alt="<?php echo $title; ?> Theme for WordPress" />
+      </figure>
     </div>
-    <div class="browser-container">
-      <div class="browser">
-        <div class="browser__top">
-          <div class="browser__button"></div>
-          <div class="browser__button"></div>
-          <div class="browser__button"></div>
+    <div class="tm-theme-info uk-width-small-1-1 uk-width-medium-2-5">
+      <header class="tm-theme-top uk-clearfix">
+        <h1 class="uk-margin-remove-top uk-float-left"><?php echo $title; ?></h1>
+        <div class="tm-theme-nav uk-float-right">
+          <a href="<?php echo $demo_url; ?>" class="uk-button uk-button-primary uk-float-right uk-margin-left tm-demo-link">View Demo</a>
+          <div class="tm-post-nav uk-float-right">
+            <div class="tm-prev uk-float-left uk-text-left">
+              <?php
+                $prev_post = get_previous_post();
+                if($prev_post) {
+                   $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
+                   echo '<a rel="prev" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_title. '" class="uk-icon-button uk-icon-arrow-left uk-animation-hover uk-animation-fade"></a>';
+                }
+              ?>
+            </div>
+            <div class="tm-next uk-float-right uk-text-right">
+              <?
+                $next_post = get_next_post();
+                if($next_post) {
+                   $next_title = strip_tags(str_replace('"', '', $next_post->post_title));
+                   echo '<a rel="next" href="' . get_permalink($next_post->ID) . '" title="' . $next_title. '" class="uk-icon-button uk-icon-arrow-right uk-animation-hover uk-animation-fade"></a>';
+                }
+              ?>
+            </div>
+          </div>
         </div>
-        <img class="browser__img" src="<?php echo $resized_src; ?>" width="1180" height="400" alt="" />
+      </header>
+      <p class="uk-article-lead"><?php echo the_excerpt(); ?></p>
+      <ul class="tm-summary uk-subnav uk-margin-left-remove">
+        <li>Type: <span><?php echo $terms_as_text; ?></span></li>
+        <li>Released: <span><?php echo $release_date; ?></span></li>
+        <li>Requirements: <span>WordPress 4.0+</span></li>
+      </ul>
+      <div class="uk-grid uk-grid-width-1-1 uk-grid-width-small-1-2">
+        <div class="tm-resources">
+          <h3 class="uk-margin-top-remove tm-list-style1">Resources</h3>
+          <ul class="uk-list">
+            <li><a href="/features/">General Theme Features</a></li>
+            <li><a href="/docs/theme-setup-guide">General Setup Guide</a></li>
+            <li><a href="/topic/tutorials/">Beans Tutorials</a></li>
+            <li><a href="http://www.getbeans.io/documentation/">Beans Documentation <i class="uk-icon-external-link uk-text-small uk-margin-small-left"></i></a></li>
+            <li><a href="http://www.getbeans.io/code-snippets/" target="_blank">Useful Code Snippets <i class="uk-icon-external-link uk-text-small uk-margin-small-left"></i></a></li>
+          </ul>
+        </div>
+        <div class="tm-downloads">
+            <h3 class="uk-margin-top-remove uk-margin-small-bottom">Downloads</h3>
+            <ul class="uk-subnav uk-margin-small-top">
+              <li class="tm-child-theme"><a href="<?php echo $download_child; ?>" onclick="javascript:_paq.push(['trackEvent', 'Child Theme', 'Download' '<?php echo $title; ?>']);" title="Download tbr-<?php echo $lowercase_title . '-child.zip'; ?>" data-uk-tooltip="{pos:'bottom-left'}">Ct</a></li>
+              <li class="tm-sketch-source"><a href="<?php echo $download_sketch; ?>" onclick="javascript:_paq.push(['trackEvent', 'Sketch Source', 'Download' '<?php echo $title; ?>']);" data-uk-tooltip="{pos:'bottom-left'}" title="Download <?php echo $lowercase_title . '-sketch.zip'; ?>"><i class="uk-icon-diamond"></i></a></li>
+            </ul>
+            <a class="tm-text-medium tm-github" title="View the <?php echo $title; ?> WordPress theme code on GitHub" href="https://github.com/ThemeButler/tbr-<?php echo $lowercase_title; ?>" target="_blank" data-uk-tooltip="{pos:'bottom-left'}"><i class="uk-icon-github uk-icon-small uk-margin-small-right"></i>View on GitHub</a>
+        </div>
+      </div>
+      <div class="tm-support">
+        <h3 class="uk-margin-top-remove">Support</h3>
+        <p>Since all our child-themes are free, support is not provided. There is a community forum and paid help available from Codeable.</p>
+        <p class="tm-buttons-wrap"><a href="http://community.themebutler.com/t/<?php echo $lowercase_title; ?>" class="uk-margin-right uk-button uk-button-secondary" target="_blank">Community forum <i class="uk-icon-external-link uk-text-small"></i></a> or
+          <a href="https://api.referoo.co/s/0gFdE" class="uk-margin-left uk-button uk-button-secondary" target="_blank">Expert help on <span>Codeable</span> <i class="uk-icon-external-link uk-text-small"></i></a></p>
       </div>
     </div>
   </div>
 <? }
-
-
-// Add the theme summary
-add_action( 'beans_main_prepend_markup', 'tbr_add_theme_top' );
-
-function tbr_add_theme_top() {
-
-  global $post;
-
-  $title = get_the_title($post->ID);
-  $lowercase_title = strtolower($title);
-  $version = get_post_meta( $post->ID, 'version', true );
-  $release_date = get_post_meta( $post->ID, 'release_date', true );
-  $release_notes = get_post_meta( $post->ID, 'release_notes', true );
-  $designers = get_terms("designers");
-  $designers_count = count($designers);
-  $terms = get_the_terms($post->ID, 'theme_type');
-  $terms_as_text = strip_tags( get_the_term_list( $post->ID, 'theme_type', '', ', ', '' ) );
-
-  require_once( get_stylesheet_directory() . '/inc/theme-top.php' );
-
-}
-
-
-// Add the tabs to the theme single layout
-add_action( 'beans_post_prepend_markup', 'tbr_add_theme_tabs' );
-
-function tbr_add_theme_tabs() {
-
-  global $post;
-
-  $title = get_the_title($post->ID);
-  $lowercase_title = strtolower($title);
-  $version = get_post_meta( $post->ID, 'version', true );
-  $download_parent = '/wp-content/downloads/tm-' . $lowercase_title . '-v'. $version . '.zip';
-  $download_child = '/wp-content/downloads/tm-' . $lowercase_title . '-child.zip';
-  $download_sketch = '/wp-content/downloads/' . $lowercase_title . '-source.zip';
-
-  require_once( get_stylesheet_directory() . '/inc/theme-menu.php' );
-  require_once( get_stylesheet_directory() . '/inc/theme-content.php' );
-
-}
 
 // Load Beans
 beans_load_document();

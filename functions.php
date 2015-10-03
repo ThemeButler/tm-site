@@ -12,14 +12,13 @@ function tbr_enqueue_uikit_assets() {
   $less_dir = get_stylesheet_directory() . '/assets/less/';
 
   // Include uikit overwrite folder
-  beans_uikit_enqueue_theme( 'tbr', $less_dir . 'uikit' );
+  beans_uikit_enqueue_theme( 'site', $less_dir . 'uikit' );
 
   // Add the theme style as a uikit fragment to have access to all the variables
   beans_compiler_add_fragment( 'uikit', $less_dir . 'style.less', 'less' );
 
   // Add the theme js as a uikit fragment
-  beans_compiler_add_fragment( 'api', get_stylesheet_directory() . '/assets/js/api.min.js', 'js' );
-  beans_compiler_add_fragment( 'theme', get_stylesheet_directory() . '/assets/js/theme.js', 'js' );
+  beans_compiler_add_fragment( 'uikit', get_stylesheet_directory() . '/assets/js/theme.js', 'js' );
 
 }
 
@@ -28,6 +27,7 @@ function tbr_enqueue_uikit_assets() {
 remove_action('wp_enqueue_scripts', 'BSA_PRO_add_custom_stylesheet');
 remove_action('wp_enqueue_scripts', 'BSA_PRO_add_stylesheet_and_script');
 
+remove_theme_support( 'offcanvas-menu' );
 
 // Remove unnecessary classes
 add_filter( 'nav_menu_css_class', '__return_false' );
@@ -39,14 +39,16 @@ add_action( 'beans_uikit_enqueue_scripts', 'tbr_home_remove_uikit_components' );
 function tbr_home_remove_uikit_components() {
 
   $components = array(
+    'article',
     'alert',
     'breadcrumb',
     'badge',
     'comment',
     'dropdown',
+    'form',
     'pagination',
     'table',
-    'subnav',
+    'navbar',
     'nav'
   );
   beans_uikit_dequeue_components( $components );
@@ -60,25 +62,34 @@ add_action( 'beans_before_load_document', 'tbr_setup_theme' );
 function tbr_setup_theme() {
 
   // beans_replace_attribute( 'beans_favicon', 'href', 'http://themebutler.com/favicon.ico' );
+
+  beans_remove_attribute( 'beans_primary_menu', 'class' );
+  beans_add_attribute( 'beans_primary_menu', 'id', 'js-mobile-nav' );
+  beans_add_attribute( 'beans_fixed_wrap_header', 'class', 'uk-text-center' );
+  beans_remove_attribute( 'beans_menu_navbar', 'id' );
   beans_remove_action( 'beans_comments' );
   beans_remove_action( 'beans_replace_nojs_class' );
-  beans_remove_action( 'beans_site_title_tag' );
   beans_remove_action( 'beans_breadcrumb' );
   beans_remove_markup( 'beans_site' );
   beans_remove_markup( 'beans_site_branding' );
   beans_remove_markup( 'beans_content' );
-  beans_add_attribute( 'beans_site', 'class', 'uk-container uk-container-center' );
+  // beans_add_attribute( 'beans_site', 'class', 'uk-container uk-container-center' );
   beans_add_attribute( 'beans_primary', 'role', 'main' );
   beans_add_attribute( 'beans_site_title_link', 'class', 'tm-logo uk-align-center' );
   beans_replace_attribute( 'beans_main', 'class', ' uk-block', ' uk-block-large' );
   beans_remove_attribute( 'beans_menu_navbar_primary', 'id' );
   beans_remove_attribute( 'beans_post', 'id' );
   beans_modify_action_hook( 'beans_footer', 'beans_main_after_markup' );
-  beans_replace_attribute( 'beans_menu_navbar_primary', 'class', 'uk-visible-large', 'uk-hidden-small' );
-  beans_replace_attribute( 'beans_primary_menu_offcanvas_button', 'class', 'uk-hidden-small', 'uk-visible-small uk-button-primary uk-float-right uk-margin-top' );
-  beans_add_attribute( 'beans_widget_area_offcanvas_bar_offcanvas_menu', 'class', ' uk-offcanvas-bar-flip' );
-  beans_remove_attribute( 'beans_menu_offcanvas', 'data-uk-nav', 'multiple:true' );
-
+  // beans_replace_attribute( 'beans_menu_navbar_primary', 'class', 'uk-visible-large', 'uk-hidden-small' );
+  //beans_replace_attribute( 'beans_menu_navbar', 'class', 'uk-visible-large uk-navbar-nav', 'uk-hidden-small uk-subnav uk-subnav-line uk-margin-remove' );
+  beans_add_attribute( 'beans_menu_navbar', 'class', 'uk-hidden-small uk-subnav uk-subnav-line uk-margin-remove' );
+  if ( is_page( 'Theme Setup Guide', 'Features' ) ) {
+      beans_remove_attribute( 'beans_post', 'class', 'uk-panel-box' );
+      beans_add_attribute( 'beans_post_title', 'class', 'uk-text-center' );
+      beans_remove_markup( 'beans_main_grid');
+      beans_remove_markup( 'beans_primary');
+      beans_add_attribute( 'beans_post_content', 'class', 'tm-narrow-content' );
+  }
 }
 
 // Include the needed uikit components
@@ -86,10 +97,16 @@ add_action( 'beans_uikit_enqueue_scripts', 'tbr_enque_uikit_global' );
 
 function tbr_enque_uikit_global() {
 
-  beans_uikit_enqueue_components( array( 'modal' ) );
+  beans_uikit_enqueue_components( array( 'contrast', 'toggle' ) );
 
 }
 
+
+// Add external link icon to a menu item
+beans_add_smart_action( 'beans_menu_item_link_24_append_markup', 'custom_add_external_link_icon' );
+function custom_add_external_link_icon() { ?>
+<i class="uk-icon-external-link uk-text-small uk-text-muted uk-margin-small-left"></i>
+<? }
 
 // Set the default layout to content only.
 beans_add_filter( 'beans_default_layout', 'c' );
@@ -98,31 +115,19 @@ beans_add_filter( 'beans_default_layout', 'c' );
 // Add the top ad section
 add_action( 'beans_header_after_markup', 'tbr_top_ads' );
 
-function tbr_top_ads() {
+function tbr_top_ads() { ?>
 
-    if( !is_page( array( 'advertise', 'contact' ) ) ) {
-    if( !is_singular( 'themes' ) ) {
-
-    ?>
-
-  <div class="tm-top tm-media-block uk-block">
-    <div class="uk-container uk-container-center">
-      <?php echo bsa_pro_ad_space('1'); ?>
-    </div>
+  <div class="tm-top tm-media-block">
+    <?php echo bsa_pro_ad_space('1'); ?>
   </div>
 
 <? }
-}
-}
+
 
 // Add the bottom ad section
 add_action( 'beans_main_after_markup', 'tbr_bottom_ads' );
 
-function tbr_bottom_ads() {
-
-    if( !is_page( array( 'advertise', 'contact' ) ) ) {
-
-    ?>
+function tbr_bottom_ads() { ?>
 
   <div class="tm-bottom tm-media-block uk-block">
     <div class="uk-container uk-container-center">
@@ -132,25 +137,42 @@ function tbr_bottom_ads() {
 
 <? }
 
-}
+
+// Add the bottom ad section
+add_action( 'beans_primary_menu_before_markup', 'tbr_mobile_menu_link' );
+
+function tbr_mobile_menu_link() { ?>
+
+    <button class="uk-button uk-visible-small uk-margin-top" data-uk-toggle="{target:'#js-mobile-nav', cls:'tm-nav-open'}">Show Navigation</button>
+
+<? }
+
+
+
+
+
+
 
 // Add the bottom newsletter signup
 add_action( 'beans_footer_before_markup', 'tbr_newsletter' );
 
 function tbr_newsletter() { ?>
-
-  <div class="tm-newsletter uk-contrast uk-block-large">
-    <div class="uk-container uk-container-center">
-      <h2 class="uk-article-title uk-text-center">Want to be notified when new themes are released?</h2>
-      <p class="uk-margin-remove uk-h3 uk-text-center">Signup for our free newsletter and you’ll be the first to know!</p>
-      <form action="#tm-footer" method="post" data-tm-subscribe>
-        <input class="tm-input uk-margin-remove" type="email" name="tb_email" placeholder="Email address" value="" autocomplete="off">
-        <input type="hidden" name="action" value="themebutler_subscribe">
-        <input type="hidden" name="tb_subscribe" value="1">
-        <button class="uk-button uk-button-secondary uk-button-small tm-field-button" name="tb_verify_coupon">Signup, it’s <strong>free</strong>!</button>
+  <div class="tm-newsletter uk-block">
+    <div class="uk-container uk-container-center uk-contrast uk-text-center">
+      <h2 class="uk-h4 uk-margin-top-remove">Want to be notified when new child-themes are released?</h2>
+      <form action="//themebutler.us7.list-manage.com/subscribe/post?u=bdf3d2258eff9f6988b1e329f&amp;id=f4e4290e61" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate uk-display-inline uk-margin-left" target="_blank" novalidate>
+        <input type="email" value="" name="EMAIL" class="required email tm-input" id="mce-EMAIL" placeholder="Email address">
+        <button class="uk-button uk-button-secondary uk-button-small tm-field-button" id="mc-embedded-subscribe" name="subscribe">Signup, it's free!</button>
+        <div class="uk-hidden" style="position: absolute; left: -5000px;"><input type="text" name="b_bdf3d2258eff9f6988b1e329f_f4e4290e61" tabindex="-1" value=""></div>
+        <div id="mce-responses" class="clear uk-hidden">
+          <div class="response" id="mce-error-response" style="display:none"></div>
+          <div class="response" id="mce-success-response" style="display:none"></div>
+        </div>
       </form>
     </div>
   </div>
+
+
 
 <? }
 

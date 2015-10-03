@@ -15,9 +15,7 @@ function tbr_community_setup() {
   beans_remove_markup( 'beans_post_content' );
   beans_remove_action( 'beans_post_title' );
 
-
 }
-
 
 // Load Beans
 beans_load_document();
