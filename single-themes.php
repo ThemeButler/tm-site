@@ -39,7 +39,7 @@ function tbr_theme_intro( $excerpt ) {
   $lowercase_title = strtolower($title);
   $version = get_post_meta( $post->ID, 'version', true );
   //$download_parent = 'https://github.com/ThemeButler/tm-' . $lowercase_title . '/releases/download/'. $version . '/tm-' . $lowercase_title . '-v'. $version . '.zip?no_cache=1';
-  $download_child = '/wp-content/downloads/tm-' . $lowercase_title . '-child.zip?no_cache=1';
+  $download_child = '/wp-content/downloads/tbr-' . $lowercase_title . '.zip?no_cache=1';
   $download_sketch = '/wp-content/downloads/' . $lowercase_title . '-source.zip?no_cache=1';
   $release_date = get_post_meta( $post->ID, 'release_date', true );
   $demo_url = 'http://demo.themebutler.com/' . $lowercase_title . '/';
