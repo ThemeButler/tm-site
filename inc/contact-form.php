@@ -51,7 +51,7 @@ if ( beans_post( 'tbr_contact' ) == true ) {
   <h1 class="uk-article-title uk-text-center">Say Hello</h1>
   <p class="tm-excerpt uk-article-lead uk-text-center">Got something you'd like to discuss, or interested in an ad package? Fill out the form below and I'll get back to you asap. Please post on the <a href="http://community.themebutler.com">Community Forum</a> for support related queries.</p>
   <hr class="uk-article-divider">
-  <form id="contact-form" name="contact-form" method="post" class="uk-form" data-tm-form>
+  <form id="contact-form" name="contact-form" method="post" class="uk-form" data-tm-form action="http://www.themebutler.com/contact/?no_cache=1">
     <div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-2 uk-margin-bottom">
       <div class="uk-margin-bottom">
         <label class="uk-form-label" for="tbr_first">First <span>*</span></label>
