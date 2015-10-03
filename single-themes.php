@@ -62,7 +62,7 @@ function tbr_theme_intro( $excerpt ) {
       <header class="tm-theme-top uk-clearfix">
         <h1 class="uk-margin-remove-top uk-float-left"><?php echo $title; ?></h1>
         <div class="tm-theme-nav uk-float-right">
-          <a href="<?php echo $demo_url; ?>" class="uk-button uk-button-primary uk-float-right uk-margin-left tm-demo-link">View Demo</a>
+          <a href="<?php echo $demo_url; ?>" class="uk-button uk-button-primary uk-float-right uk-margin-left tm-demo-link" target="_blank">View Demo</a>
           <div class="tm-post-nav uk-float-right">
             <div class="tm-prev uk-float-left uk-text-left">
               <?php
