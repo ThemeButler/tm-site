@@ -35,7 +35,7 @@ if ( beans_post( 'tbr_contact' ) == true ) {
     $body = "New message received from the ThemeButler site :)\n\nName: {$first} {$last}\nEmail: {$email}\nWebsite: {$website}";
     $body .= "\nMessage: {$message}";
     $headers = "From: {$first} {$last}<{$email}>\r\nReply-To: {$email}";
-    wp_mail( 'hello@themebutler.com', $subject, $body, $headers ); ?>
+    wp_mail( 'chris@themebutler.com', $subject, $body, $headers ); ?>
 
     <div class="uk-text-center uk-block">
       <h2>Nice one! Your message is on its way to my inbox!</h2>
