@@ -97,7 +97,7 @@ add_action( 'beans_uikit_enqueue_scripts', 'tbr_enque_uikit_global' );
 
 function tbr_enque_uikit_global() {
 
-  beans_uikit_enqueue_components( array( 'toggle' ) );
+  beans_uikit_enqueue_components( array( 'toggle', 'flex' ) );
 
 }
 
