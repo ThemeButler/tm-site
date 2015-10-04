@@ -159,7 +159,7 @@ add_action( 'beans_footer_before_markup', 'tbr_newsletter' );
 function tbr_newsletter() { ?>
   <div class="tm-newsletter uk-block">
     <div class="uk-container uk-container-center uk-contrast uk-text-center">
-      <h2 class="uk-h4 uk-margin-top-remove">Want to be notified when new child-themes are released?</h2>
+      <h2 class="uk-h3 uk-margin-top-remove">Want to be notified when new child-themes are released?</h2>
       <form action="//themebutler.us7.list-manage.com/subscribe/post?u=bdf3d2258eff9f6988b1e329f&amp;id=f4e4290e61" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate uk-display-inline uk-margin-left" target="_blank" novalidate>
         <input type="email" value="" name="EMAIL" class="required email tm-input" id="mce-EMAIL" placeholder="Email address">
         <button class="uk-button uk-button-secondary uk-button-small tm-field-button" id="mc-embedded-subscribe" name="subscribe">Signup, it's free!</button>
