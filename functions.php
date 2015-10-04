@@ -23,11 +23,22 @@ function tbr_enqueue_uikit_assets() {
 }
 
 
+// Enqueue the Google Fonts to the head
+add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
+
+function wpb_add_google_fonts() {
+
+    wp_enqueue_style( 'wpb-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,300,700,900', false );
+
+}
+
+
 // Cleanup AdsPro
 remove_action('wp_enqueue_scripts', 'BSA_PRO_add_custom_stylesheet');
 remove_action('wp_enqueue_scripts', 'BSA_PRO_add_stylesheet_and_script');
 
 remove_theme_support( 'offcanvas-menu' );
+
 
 // Remove unnecessary classes
 add_filter( 'nav_menu_css_class', '__return_false' );
@@ -181,12 +192,10 @@ function tbr_newsletter() { ?>
 beans_modify_action_callback( 'beans_footer_content', 'tbr_footer' );
 
 function tbr_footer() { ?>
-
   <div class="uk-grid uk-grid-width-1-1 uk-grid-width-small-1-2 uk-margin-top uk-margin-large-bottom uk-text-muted">
     <div class="tm-copyright">&#169; ThemeButler <?php echo date('Y'); ?>. All rights reserved.</div>
     <div class="tm-credits uk-text-right">Built with <a href="https://getbeans.io" target="_blank" title="Build Smarter with Beans.">Beans</a> and <a href="http://wordpress.org" target="_blank">WordPress</a>.</div>
   </div>
-  <!-- Piwik -->
   <script type="text/javascript">
     var _paq = _paq || [];
     _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
@@ -203,8 +212,6 @@ function tbr_footer() { ?>
     })();
   </script>
   <noscript><p><img src="//stats.themebutler.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-  <!-- End Piwik Code -->
-
 <? }
 
 
