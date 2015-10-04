@@ -28,7 +28,7 @@ add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
 
 function wpb_add_google_fonts() {
 
-    wp_enqueue_style( 'wpb-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,300,700,900', false );
+    wp_enqueue_style( 'wpb-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:900', false );
 
 }
 
@@ -75,8 +75,6 @@ add_action( 'beans_before_load_document', 'tbr_setup_theme' );
 
 function tbr_setup_theme() {
 
-  // beans_replace_attribute( 'beans_favicon', 'href', 'http://themebutler.com/favicon.ico' );
-
   beans_remove_attribute( 'beans_primary_menu', 'class' );
   beans_add_attribute( 'beans_primary_menu', 'id', 'js-mobile-nav' );
   beans_add_attribute( 'beans_fixed_wrap_header', 'class', 'uk-text-center' );
@@ -87,23 +85,21 @@ function tbr_setup_theme() {
   beans_remove_markup( 'beans_site' );
   beans_remove_markup( 'beans_site_branding' );
   beans_remove_markup( 'beans_content' );
-  // beans_add_attribute( 'beans_site', 'class', 'uk-container uk-container-center' );
   beans_add_attribute( 'beans_primary', 'role', 'main' );
   beans_add_attribute( 'beans_site_title_link', 'class', 'tm-logo uk-align-center' );
   beans_replace_attribute( 'beans_main', 'class', ' uk-block', ' uk-block-large' );
   beans_remove_attribute( 'beans_menu_navbar_primary', 'id' );
   beans_remove_attribute( 'beans_post', 'id' );
   beans_modify_action_hook( 'beans_footer', 'beans_main_after_markup' );
-  // beans_replace_attribute( 'beans_menu_navbar_primary', 'class', 'uk-visible-large', 'uk-hidden-small' );
-  //beans_replace_attribute( 'beans_menu_navbar', 'class', 'uk-visible-large uk-navbar-nav', 'uk-hidden-small uk-subnav uk-subnav-line uk-margin-remove' );
   beans_add_attribute( 'beans_menu_navbar', 'class', 'uk-hidden-small uk-subnav uk-subnav-line uk-margin-remove' );
-  if ( is_page( 'Theme Setup Guide', 'Features' ) ) {
+
+  if ( is_page( 'Theme Setup Guide', 'Features' ) )
       beans_remove_attribute( 'beans_post', 'class', 'uk-panel-box' );
       beans_add_attribute( 'beans_post_title', 'class', 'uk-text-center' );
       beans_remove_markup( 'beans_main_grid');
       beans_remove_markup( 'beans_primary');
       beans_add_attribute( 'beans_post_content', 'class', 'tm-narrow-content' );
-  }
+
 }
 
 // Include the needed uikit components
@@ -122,6 +118,7 @@ function custom_add_external_link_icon() { ?>
 <i class="uk-icon-external-link uk-text-small uk-text-muted uk-margin-small-left"></i>
 <? }
 
+
 // Set the default layout to content only.
 beans_add_filter( 'beans_default_layout', 'c' );
 
@@ -130,11 +127,9 @@ beans_add_filter( 'beans_default_layout', 'c' );
 add_action( 'beans_header_after_markup', 'tbr_top_ads' );
 
 function tbr_top_ads() { ?>
-
   <div class="tm-top tm-media-block">
     <?php echo bsa_pro_ad_space('1'); ?>
   </div>
-
 <? }
 
 
@@ -142,13 +137,11 @@ function tbr_top_ads() { ?>
 add_action( 'beans_main_after_markup', 'tbr_bottom_ads' );
 
 function tbr_bottom_ads() { ?>
-
   <div class="tm-bottom tm-media-block uk-block">
     <div class="uk-container uk-container-center">
       <?php echo bsa_pro_ad_space('2'); ?>
     </div>
   </div>
-
 <? }
 
 
@@ -156,15 +149,8 @@ function tbr_bottom_ads() { ?>
 add_action( 'beans_primary_menu_before_markup', 'tbr_mobile_menu_link' );
 
 function tbr_mobile_menu_link() { ?>
-
     <button class="uk-button uk-visible-small uk-margin-top" data-uk-toggle="{target:'#js-mobile-nav', cls:'tm-nav-open'}">Show Navigation</button>
-
 <? }
-
-
-
-
-
 
 
 // Add the bottom newsletter signup
@@ -185,9 +171,6 @@ function tbr_newsletter() { ?>
       </form>
     </div>
   </div>
-
-
-
 <? }
 
 
