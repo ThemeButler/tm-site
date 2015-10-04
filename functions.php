@@ -23,16 +23,6 @@ function tbr_enqueue_uikit_assets() {
 }
 
 
-// Enqueue the Google Fonts to the head
-add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
-
-function wpb_add_google_fonts() {
-
-    wp_enqueue_style( 'wpb-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:700', false );
-
-}
-
-
 // Cleanup AdsPro
 remove_action('wp_enqueue_scripts', 'BSA_PRO_add_custom_stylesheet');
 remove_action('wp_enqueue_scripts', 'BSA_PRO_add_stylesheet_and_script');
