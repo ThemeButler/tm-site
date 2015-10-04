@@ -1,12 +1,6 @@
 /**
  * Global
  */
-a {
-    position: relative;
-}
-a:active {
-    bottom: -1px;
-}
 
 /**
  * Header
@@ -15,7 +9,11 @@ a:active {
     background: url(http://cdn.themebutler.com/wp-content/themes/tm-site/assets/images/header.jpg) no-repeat;
     background-size: cover;
     border-bottom: 1px solid #fff;
-    ul.uk-subnav {
+    span.tm-site-title-tag {
+        text-indent: 20px;
+        padding-top: 5px;
+    }
+    ul {
         width: auto;
         display: inline-block;
     }
@@ -408,6 +406,12 @@ a.tm-cta {
 img.wp-smiley {
     max-width: 16px;
 }
+.tm-nudge a {
+    position: relative;
+}
+.tm-nudge a:active {
+    bottom: -1px;
+}
 
 /**
  * Features
@@ -671,17 +675,17 @@ img.wp-smiley {
   }
 }
 @media (max-width: 1200px) {
-  .tm-top .tm-item .uk-width-medium-1-1 {
-      width: 100%;
-  }
+    .tm-top .tm-item .uk-width-medium-1-1 {
+        width: 100%;
+    }
+    .tm-bottom .tm-item:nth-child(n+6) {
+        display: none;
+    }
 }
 @media (min-width: 1220px) {
 	.uk-container {
         max-width: 1350px;
         padding: 0 35px;
-    }
-	.tm-bottom .tm-item:nth-child(n+6) {
-        display: none;
     }
 }
 @media (max-width: 1440px) {

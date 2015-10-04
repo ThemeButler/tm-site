@@ -60,7 +60,7 @@ function tbr_home_themes_loop( $query ) {
       <div class="tm-item uk-margin-medium-bottom">
         <figure class="uk-overlay uk-overlay-hover">
           <img src="<?php echo $resized_src; ?>" class="uk-thumbnail" width="400">
-          <figcaption class="uk-overlay-panel uk-overlay-background uk-overlay-fade"><?php echo the_title(); ?></figcaption>
+          <figcaption class="uk-overlay-panel uk-flex uk-flex-center uk-flex-middle uk-text-center uk-overlay-background uk-overlay-fade"><?php echo the_title(); ?></figcaption>
           <a class="uk-position-cover" href="<?php echo get_permalink(); ?>"></a>
       </figure>
 

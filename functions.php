@@ -73,15 +73,14 @@ function tbr_setup_theme() {
   beans_remove_action( 'beans_replace_nojs_class' );
   beans_remove_action( 'beans_breadcrumb' );
   beans_remove_markup( 'beans_site' );
-  beans_remove_markup( 'beans_site_branding' );
   beans_remove_markup( 'beans_content' );
   beans_add_attribute( 'beans_primary', 'role', 'main' );
-  beans_add_attribute( 'beans_site_title_link', 'class', 'tm-logo uk-align-center' );
+  beans_replace_attribute( 'beans_site_branding', 'class', 'uk-float-left', 'tm-logo uk-align-center tm-nudge' );
   beans_replace_attribute( 'beans_main', 'class', ' uk-block', ' uk-block-large' );
   beans_remove_attribute( 'beans_menu_navbar_primary', 'id' );
   beans_remove_attribute( 'beans_post', 'id' );
   beans_modify_action_hook( 'beans_footer', 'beans_main_after_markup' );
-  beans_add_attribute( 'beans_menu_navbar', 'class', 'uk-hidden-small uk-subnav uk-subnav-line uk-margin-remove' );
+  beans_add_attribute( 'beans_menu_navbar', 'class', 'uk-hidden-small uk-subnav uk-subnav-line uk-margin-remove tm-nudge' );
 
   if ( is_page( 'Theme Setup Guide', 'Features' ) ) {
       beans_remove_attribute( 'beans_post', 'class', 'uk-panel-box' );
