@@ -1,30 +1,11 @@
 /**
  * Global
  */
-html {
-    font: 400 16px/24px 'Lato', sans-serif;
-}
-h1, h2, h3 {
-    font-weight: 700;
-    color: #423737;
-}
-h2 {
-    font-size: 30px;
-}
-h3 {
-    font-weight: 700;
-    color: #594747;
-}
 a {
     position: relative;
-    color: #E27800;
-}
-a:hover {
-    color: #B76100;
 }
 a:active {
     bottom: -1px;
-    color: #E27800;
 }
 
 /**
@@ -65,8 +46,8 @@ a:active {
             a {
                 display: inline-block;
                 text-align: center;
-                font-weight: 700;
-                font-family: 'Montserrat', sans-serif;
+                font-weight: 900;
+                font-family: 'Lato', sans-serif;
                 -webkit-font-smoothing: antialiased;
             }
         }
@@ -104,14 +85,6 @@ a:active {
     ul {
         display: block!important;
     }
-}
-a.uk-icon-external-link:before {
-    font-family: "FontAwesome";
-    float: right;
-    font-size: 11px;
-    margin-left: 10px;
-    line-height: 2;
-    color: #fff;
 }
 
 /**
@@ -152,33 +125,6 @@ a.uk-icon-external-link:before {
         strong {
             border-bottom: 3px solid #FCC64C;
             padding-bottom: 2px;
-        }
-        a:active:before {
-            content: "You're awesome!";
-            width: 100%;
-            height: 215px;
-            background-color: rgba(255,255,255,0.9);
-            text-align: center;
-            display: block;
-            position: absolute;
-            left: 0;
-            line-height: 255px;
-            z-index: 8;
-            top: 0;
-        }
-        a:active:after {
-            content: "\f118";
-            font-size: 50px;
-            width: 100%;
-            text-align: center;
-            color: #FCC64C;
-            display: block;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            font-family: FontAwesome;
-            line-height: 50px;
-            z-index: 9;
         }
     }
     .tm-item:hover {
@@ -257,52 +203,6 @@ a.uk-icon-external-link:before {
     }
 }
 
-/**
- * Buttons
- */
-.uk-button {
-    background: #fff;
-    color: #444;
-    border-radius: 2px;
-    line-height: 28px;
-}
-.uk-button:hover {
-    background: #fff;
-}
-.uk-button-primary {
-    background: #E27800;
-    color: #fff;
-    border-radius: 2px;
-}
-.uk-button-primary:hover {
-    background: #B76100;
-}
-.uk-button-secondary,.uk-button-secondary:visited {
-    background: #6D5856;
-    color: #fff;
-    border-radius: 2px;
-}
-.uk-button-secondary:hover,.uk-button-secondary:active {
-    background: #3F2E2C;
-    color: #fff;
-}
-.uk-button-secondary:visited {
-    color: rgba(255,255,255,0.5);
-}
-.uk-button-large {
-    min-height: 60px;
-    padding: 0 30px;
-    line-height: 60px;
-    font-size: 20px;
-    border-radius: 3px;
-    border-bottom: 5px solid #FCC64C;
-}
-.uk-button-medium {
-    min-height: 40px;
-    padding: 0 15px;
-    line-height: 40px;
-    font-size: 16px;
-}
 
 /**
  * Theme Single
@@ -348,7 +248,6 @@ p.uk-article-lead.tm-excerpt {
     }
     figcaption {
         font-size: 30px;
-        line-height: 210px;
         font-weight: 600;
     }
 }
@@ -414,16 +313,6 @@ p.uk-article-lead.tm-excerpt {
             font-size: 25px;
             line-height: 60px;
             text-align: center;
-        }
-        a:visited:before {
-            font-family: FontAwesome;
-            display: inline-block;
-            font-weight: 400;
-            font-style: normal;
-            line-height: 1;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            content: "\f046";
         }
     }
     li.tm-child-theme {
@@ -594,7 +483,8 @@ img.wp-smiley {
     border-top: 5px solid #FCC64C;
 }
 .tm-footer div {
-    color: rgba(0,0,0,0.5);
+    color: #888;
+    font-size: 14px;
 }
 .tm-footer a {
     color: #635252;
@@ -734,6 +624,21 @@ img.wp-smiley {
 	.tm-summary li {
         width: 31.5%;
         margin: 0 0 0 1.5%;
+    }
+    .tm-item {
+        a:active:before {
+            content: "You're awesome!";
+            width: 100%;
+            height: 215px;
+            background-color: rgba(255,255,255,0.9);
+            text-align: center;
+            display: block;
+            position: absolute;
+            left: 0;
+            line-height: 255px;
+            z-index: 8;
+            top: 0;
+        }
     }
 }
 @media (max-width: 960px) {
