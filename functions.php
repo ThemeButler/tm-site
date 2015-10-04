@@ -83,13 +83,13 @@ function tbr_setup_theme() {
   beans_modify_action_hook( 'beans_footer', 'beans_main_after_markup' );
   beans_add_attribute( 'beans_menu_navbar', 'class', 'uk-hidden-small uk-subnav uk-subnav-line uk-margin-remove' );
 
-  if ( is_page( 'Theme Setup Guide', 'Features' ) )
+  if ( is_page( 'Theme Setup Guide', 'Features' ) ) {
       beans_remove_attribute( 'beans_post', 'class', 'uk-panel-box' );
       beans_add_attribute( 'beans_post_title', 'class', 'uk-text-center' );
       beans_remove_markup( 'beans_main_grid');
       beans_remove_markup( 'beans_primary');
       beans_add_attribute( 'beans_post_content', 'class', 'tm-narrow-content' );
-
+  }
 }
 
 // Include the needed uikit components
