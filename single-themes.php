@@ -23,8 +23,8 @@ add_action( 'beans_uikit_enqueue_scripts', 'tbr_enque_uikit_theme_single' );
 
 function tbr_enque_uikit_theme_single() {
 
-  beans_uikit_enqueue_components( array( 'article', 'contrast', 'subnav', 'icon', 'list' ) );
-  beans_uikit_enqueue_components( array( 'tooltip' ), 'add-ons' );
+  beans_uikit_enqueue_components( array( 'article' ) );
+  //beans_uikit_enqueue_components( array( 'tooltip' ), 'add-ons' );
 
 }
 

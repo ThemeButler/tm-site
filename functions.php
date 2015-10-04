@@ -60,7 +60,10 @@ function tbr_home_remove_uikit_components() {
     'pagination',
     'table',
     'navbar',
-    'nav'
+    'nav',
+    'icon',
+    'offcanvas',
+    'contrast'
   );
   beans_uikit_dequeue_components( $components );
 
@@ -108,7 +111,7 @@ add_action( 'beans_uikit_enqueue_scripts', 'tbr_enque_uikit_global' );
 
 function tbr_enque_uikit_global() {
 
-  beans_uikit_enqueue_components( array( 'contrast', 'toggle' ) );
+  beans_uikit_enqueue_components( array( 'toggle' ) );
 
 }
 
