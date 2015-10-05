@@ -33,17 +33,5 @@ function tbr_enque_uikit_blog_single() {
 beans_add_filter( 'beans_layout', 'c_sp' );
 
 
-
-add_action( 'tuxedo_post_body', 'tbr_excerpt', 9 );
-​
-function tbr_excerpt() {
-​
-	// Stop here if excerpt is empty.
-	if ( !has_excerpt() )
-		return;
-​
-	echo '<div class="uk-article-lead">';
-}
-
 // Load Beans
 beans_load_document();
