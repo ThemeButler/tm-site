@@ -6,12 +6,12 @@ add_action( 'beans_before_load_document', 'tbr_blog_setup' );
 function tbr_blog_setup() {
 
   beans_remove_attribute( 'beans_body', 'class' );
-  beans_add_attribute( 'beans_body', 'class', 'tm-blog' );
+  beans_add_attribute( 'beans_body', 'class', 'tm-blog tm-post' );
   beans_remove_action( 'beans_post_meta' );
   beans_remove_action( 'beans_post_meta_categories' );
   beans_remove_attribute( 'beans_post', 'class' );
   beans_add_attribute( 'beans_post', 'class', 'uk-article uk-panel uk-panel-box uk-panel-box-secondary' );
-  beans_remove_attribute( 'beans_comments', 'class', ' uk-panel-box' );
+  beans_add_attribute( 'beans_comments', 'class', ' uk-panel-box-primary' );
 
 }
 
