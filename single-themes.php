@@ -114,8 +114,8 @@ function tbr_theme_intro( $excerpt ) {
       <div class="tm-support">
         <h3 class="uk-margin-top-remove">Support</h3>
         <p>Since all our child-themes are free, support is not provided. There is a community forum and paid help available from Codeable.</p>
-        <p class="tm-buttons-wrap"><a href="http://community.themebutler.com/t/<?php echo $lowercase_title; ?>" class="uk-margin-right uk-button uk-button-secondary" target="_blank">Community forum <i class="uk-icon-external-link uk-text-small"></i></a> or
-          <a href="https://api.referoo.co/s/0gFdE" class="uk-margin-left uk-button uk-button-secondary" target="_blank">Expert help on <span>Codeable</span> <i class="uk-icon-external-link uk-text-small"></i></a></p>
+        <p class="tm-buttons-wrap"><a href="http://community.themebutler.com/t/<?php echo $lowercase_title; ?>" class="uk-margin-right uk-button uk-button-secondary" target="_blank">Post on the Community Forum <i class="uk-icon-external-link uk-text-small"></i></a> or
+          <a href="https://api.referoo.co/s/0gFdE" class="uk-margin-left uk-button uk-button-secondary" target="_blank">Get expert help on <span>Codeable</span> <i class="uk-icon-external-link uk-text-small"></i></a></p>
       </div>
     </div>
   </div>
