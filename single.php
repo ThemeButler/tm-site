@@ -36,7 +36,7 @@ beans_add_filter( 'beans_layout', 'c_sp' );
 
 add_action( 'tuxedo_post_body', 'tbr_excerpt', 9 );
 ​
-function canva_child_excerpt() {
+function tbr_excerpt() {
 ​
 	// Stop here if excerpt is empty.
 	if ( !has_excerpt() )
