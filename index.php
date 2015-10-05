@@ -20,6 +20,7 @@ function tbr_blog_setup() {
   beans_remove_markup( 'beans_post_title_link' );
   beans_replace_attribute( 'beans_post', 'class', 'uk-article', 'tm-item"' );
   beans_add_attribute( 'beans_main_grid', 'class', 'uk-grid-width-small-1-1 uk-grid-width-medium-1-3' );
+  beans_add_attribute( 'beans_main_grid', 'data-uk-grid-match', "{target:'.uk-panel'}" );
   beans_modify_markup( 'beans_post', 'div' );
   beans_wrap_inner_markup( 'beans_post', 'tm_item_inner', 'div', array( 'class' => 'uk-panel uk-panel-box uk-panel-box-secondary' ) );
   beans_add_attribute( 'beans_post_title', 'class', 'uk-margin-top-remove' );
