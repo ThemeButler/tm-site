@@ -69,7 +69,7 @@ function tbr_theme_intro( $excerpt ) {
                 $prev_post = get_previous_post();
                 if($prev_post) {
                    $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
-                   echo '<a rel="prev" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_title. '" class="uk-icon-button uk-icon-arrow-left uk-animation-hover uk-animation-fade"></a>';
+                   echo '<a rel="prev" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_title. '" class="uk-button">&#9756;</a>';
                 }
               ?>
             </div>
@@ -78,7 +78,7 @@ function tbr_theme_intro( $excerpt ) {
                 $next_post = get_next_post();
                 if($next_post) {
                    $next_title = strip_tags(str_replace('"', '', $next_post->post_title));
-                   echo '<a rel="next" href="' . get_permalink($next_post->ID) . '" title="' . $next_title. '" class="uk-icon-button uk-icon-arrow-right uk-animation-hover uk-animation-fade"></a>';
+                   echo '<a rel="next" href="' . get_permalink($next_post->ID) . '" title="' . $next_title. '" class="uk-button uk-margin-small-left">&#9758;</a>';
                 }
               ?>
             </div>
@@ -86,7 +86,7 @@ function tbr_theme_intro( $excerpt ) {
         </div>
       </header>
       <p class="uk-article-lead"><?php echo the_excerpt(); ?></p>
-      <ul class="tm-summary uk-subnav uk-margin-left-remove">
+      <ul class="tm-summary uk-list uk-margin-left-remove uk-clearfix">
         <li>Type: <span><?php echo $terms_as_text; ?></span></li>
         <li>Released: <span><?php echo $release_date; ?></span></li>
         <li>Requirements: <span>WordPress 4.0+</span></li>

@@ -264,15 +264,18 @@ li.tm-divider {
     padding: 10px 0;
     margin: 30px 0 30px;
     li {
-        width: 100%;
+        width: 30%;
         margin: 0 0 10px;
         padding: 0;
-        font-size: 13px;
+        float: left;
+        font-size: 11px;
         color: #888;
+        text-transform: uppercase;
         span {
             display: block;
-            font-size: 18px;
+            font-size: 16px;
             color: #444;
+            text-transform: none;
         }
     }
     li:last-of-type {
@@ -283,17 +286,20 @@ li.tm-divider {
         color: #999;
     }
 }
-.tm-theme-nav {
-    a.uk-icon-button {
+.tm-post-nav {
+    a {
         background-color: #484642;
         color: #fff;
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: bold;
     }
-    a.uk-icon-button:hover {
+    a:hover {
         background-color: #6D6B66;
     }
 }
-.tm-demo-link {
-    margin-top: 2px;
+.tm-theme-top a {
+    margin-top: 5px;
 }
 .uk-panel-box-secondary {
     background-color: #fff;
@@ -613,6 +619,19 @@ img.wp-smiley {
             line-height: 255px;
             z-index: 8;
             top: 0;
+        }
+        a:active:after {
+        	content: "☻";
+        	font-size: 50px;
+        	width: 100%;
+        	text-align: center;
+        	color: #FCC64C;
+        	display: block;
+        	position: absolute;
+        	top: 60px;
+        	left: 0;
+        	line-height: 50px;
+        	z-index: 9;
         }
     }
 }
