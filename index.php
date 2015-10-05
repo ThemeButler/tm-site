@@ -44,7 +44,7 @@ add_action( 'beans_post_meta_categories_prefix_output', 'tbr_categories_prefix' 
 
 function tbr_categories_prefix() {
 
-  echo '';
+  return;
 
 }
 
