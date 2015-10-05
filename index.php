@@ -23,10 +23,10 @@ function tbr_blog_setup() {
   beans_add_attribute( 'beans_main_grid', 'data-uk-grid-match', "{target:'.uk-panel'}" );
   beans_modify_markup( 'beans_post', 'div' );
   beans_wrap_inner_markup( 'beans_post', 'tm_item_inner', 'div', array( 'class' => 'uk-panel uk-panel-box uk-panel-box-secondary' ) );
-  beans_add_attribute( 'beans_post_title', 'class', 'uk-margin-top-remove' );
-  beans_add_attribute( 'beans_post_more_link', 'class', 'uk-button uk-button-secondary uk-button-small' );
+  beans_add_attribute( 'beans_post_title', 'class', 'uk-margin-small-top' );
+  beans_add_attribute( 'beans_post_more_link', 'class', 'uk-button uk-button-primary' );
   beans_replace_attribute( 'beans_next_icon_more_link', 'class', 'uk-icon-angle-double-right', 'uk-icon-arrow-circle-o-right' );
-  beans_replace_attribute( 'beans_post_meta_categories', 'class', 'uk-clearfix', 'uk-text-small' );
+  beans_replace_attribute( 'beans_post_meta_categories', 'class', 'uk-text-small uk-text-muted uk-clearfix', 'tm-topic uk-button uk-button-tertiary uk-button-mini' );
 
 }
 
@@ -35,7 +35,7 @@ add_action( 'beans_post_meta_categories_after_markup', 'tbr_post_date' );
 
 function tbr_post_date() {
 
-  return the_date('d M, Y', '<span class="uk-text-muted uk-text-small"><i class="uk-margin-small-left uk-margin-small-right">/</i>', '</span>');
+  return the_date('d M, Y', '<span class="uk-text-muted uk-text-small uk-margin-left">', '</span>');
 
 }
 
