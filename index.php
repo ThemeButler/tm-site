@@ -27,6 +27,8 @@ function tbr_blog_setup() {
   beans_add_attribute( 'beans_post_more_link', 'class', 'uk-button uk-button-primary' );
   beans_replace_attribute( 'beans_next_icon_more_link', 'class', 'uk-icon-angle-double-right', 'uk-icon-arrow-circle-o-right' );
   beans_replace_attribute( 'beans_post_meta_categories', 'class', 'uk-text-small uk-text-muted uk-clearfix', 'tm-topic uk-button uk-button-tertiary uk-button-mini' );
+  beans_add_attribute( 'beans_widget_content_sidebar_primary_recent-posts', 'class', 'tm-list-style1' );
+  beans_add_attribute( 'beans_widget_content_categories', 'class', 'tm-list-style1' );
 
 }
 

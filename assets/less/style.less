@@ -311,6 +311,9 @@ li.tm-divider {
 /**
  * Blog
  */
+.tm-post .uk-article {
+    padding: 40px;
+}
 .tm-blog {
     .tm-topic a {
         color: #676464;
@@ -328,6 +331,7 @@ li.tm-divider {
 }
 .tm-comments {
     border-radius: 2px 2px 0 0;
+    padding: 40px;
 }
 .tm-comments hr{
     border-color: rgba(255,255,255,0.2);
@@ -358,6 +362,62 @@ li.comment {
 .uk-comment-avatar {
     border-radius: 2px;
     overflow: hidden;
+}
+.tm-widget.widget_search form input.uk-width-1-1 {
+    padding: 20px;
+    font-family: inherit;
+    height: 30px;
+    min-height: 30px;
+    border-color: red;
+    border-width: 0;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.1) inset;
+    border-radius: 2px;
+    background: #EFECE6;
+}
+.tm-tags a {
+  background: rgba(252, 198, 76, 0.44);
+  border-radius: 2px;
+  margin: 0 2px 5px 0;
+  padding: 2px 6px 3px 10px;
+  margin-left: 12px;
+  display: inline-block;
+  position: relative;
+  font-size: 12px;
+  color: #6D5149;
+  font-weight: 500;
+}
+.tm-tags a:before {
+  content: "";
+  float: left;
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 0;
+  height: 0;
+  border-color: transparent rgba(252, 198, 76, 0.44) transparent transparent;
+  border-style: solid;
+  border-width: 12px 12px 12px 0;
+}
+.tm-tags a:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  float: left;
+  width: 6px;
+  height: 6px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: #fff;
+}
+.tm-tags a:hover {
+  background: #fff;
+  color: #444;
+  text-decoration: none;
+}
+.tm-tags a:hover:before {
+  border-color: transparent #fff transparent transparent;
 }
 
 /**
@@ -450,8 +510,8 @@ a.tm-cta {
  */
 .tm-list-style1 a:before {
     content: '';
-    width: 10px;
-    height: 10px;
+    width: 6px;
+    height: 6px;
     display: inline-block;
     background: #fff;
     border: 2px solid #FCC64C;
