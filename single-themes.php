@@ -56,6 +56,8 @@ function tbr_theme_intro( $excerpt ) {
     <div class="tm-image uk-width-small-1-1 uk-width-medium-3-5 uk-margin-large-bottom">
       <figure class="uk-thumbnail">
         <img src="<?php echo $resized_src; ?>" width="750" alt="<?php echo $title; ?> Theme for WordPress" />
+        <figcaption></figcaption>
+        <a href="<?php echo $demo_url; ?>" class="" target="_blank">View Demo</a>
       </figure>
     </div>
     <div class="tm-theme-info uk-width-small-1-1 uk-width-medium-2-5">
@@ -94,7 +96,7 @@ function tbr_theme_intro( $excerpt ) {
       <div class="uk-grid uk-grid-width-1-1 uk-grid-width-small-1-2">
         <div class="tm-resources">
           <h3 class="uk-margin-top-remove tm-list-style1">Resources</h3>
-          <ul class="uk-list">
+          <ul class="uk-list tm-list-style1">
             <li><a href="/features/">General Theme Features</a></li>
             <li><a href="/docs/theme-setup-guide">General Setup Guide</a></li>
             <li><a href="/topic/tutorials/">Beans Tutorials</a></li>
@@ -107,7 +109,7 @@ function tbr_theme_intro( $excerpt ) {
             <ul class="uk-list uk-margin-small-top">
               <li><a href="<?php echo $download_child; ?>" onclick="javascript:_paq.push(['trackEvent', 'Child Theme', 'Download' '<?php echo $title; ?>']);" title="Download tbr-<?php echo $lowercase_title . '-child.zip'; ?>" data-uk-tooltip="{pos:'bottom-left'}"><?php echo $title; ?> Child-Theme</a></li>
               <li class="tm-divider"><a href="<?php echo $download_sketch; ?>" onclick="javascript:_paq.push(['trackEvent', 'Sketch Source', 'Download' '<?php echo $title; ?>']);" data-uk-tooltip="{pos:'bottom-left'}" title="Download <?php echo $lowercase_title . '-sketch.zip'; ?>"><?php echo $title; ?> Sketch Source</a></li>
-              <li><a class="tm-text-medium tm-github" title="View the <?php echo $title; ?> WordPress theme code on GitHub" href="https://github.com/ThemeButler/tbr-<?php echo $lowercase_title; ?>" target="_blank" data-uk-tooltip="{pos:'bottom-left'}"><i class="uk-icon-github uk-icon-small uk-margin-small-right"></i>View on GitHub</a></li>
+              <li class="uk-margin-top"><a class="tm-text-medium tm-github uk-button" title="View the <?php echo $title; ?> WordPress theme code on GitHub" href="https://github.com/ThemeButler/tbr-<?php echo $lowercase_title; ?>" target="_blank" data-uk-tooltip="{pos:'bottom-left'}"><i class="uk-icon-github uk-icon-small uk-margin-small-right"></i>View on GitHub</a></li>
             </ul>
         </div>
       </div>

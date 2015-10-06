@@ -4,22 +4,29 @@
 * Overrides pagination.less, located in /wp-content/themes/tm-dfh/lib/api/uikit/src/less/core/pagination.less
 */
 
-@pagination-margin-left:                        10px;
+@pagination-margin-left:                        0;
 @pagination-padding-vertical:                   12px;
 @pagination-padding-horizontal:                 20px;
 @pagination-line-height:                        20px;
 @pagination-background:                         #fff;
 @pagination-hover-background:                   #fff;
-
+.uk-pagination > li {
+    display: block;
+    width: 49%;
+}
 .uk-pagination > li > a,
 .uk-pagination > li > span {
     border-radius: 2px;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
     border-bottom: 3px solid;
+    display: block;
 }
 .uk-pagination > li > a:hover {
     border-bottom-color: #FCC64C;
 }
 .uk-pagination > li > a:active{
     background: rgba(255,255,255,0.3);
+}
+.uk-pagination li i {
+    display: none;
 }

@@ -89,6 +89,7 @@ function tbr_setup_theme() {
       beans_remove_markup( 'beans_primary');
       beans_add_attribute( 'beans_post_content', 'class', 'tm-narrow-content' );
   }
+  
 }
 
 // Include the needed uikit components
