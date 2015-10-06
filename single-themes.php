@@ -23,7 +23,7 @@ add_action( 'beans_uikit_enqueue_scripts', 'tbr_enque_uikit_theme_single' );
 
 function tbr_enque_uikit_theme_single() {
 
-  beans_uikit_enqueue_components( array( 'article' ) );
+  beans_uikit_enqueue_components( array( 'article', 'overlay' ) );
   //beans_uikit_enqueue_components( array( 'tooltip' ), 'add-ons' );
 
 }
@@ -54,10 +54,10 @@ function tbr_theme_intro( $excerpt ) {
   ?>
   <div class="uk-grid">
     <div class="tm-image uk-width-small-1-1 uk-width-medium-3-5 uk-margin-large-bottom">
-      <figure class="uk-thumbnail">
-        <img src="<?php echo $resized_src; ?>" width="750" alt="<?php echo $title; ?> Theme for WordPress" />
-        <figcaption></figcaption>
-        <a href="<?php echo $demo_url; ?>" class="" target="_blank">View Demo</a>
+      <figure class="uk-overlay uk-overlay-hover uk-thumbnail">
+        <img src="<?php echo $resized_src; ?>" width="750" alt="<?php echo $title; ?> Child-Theme for the Beans WordPress Theme" />
+        <figcaption class="uk-overlay-panel uk-flex uk-flex-center uk-flex-middle uk-text-center uk-overlay-background uk-overlay-fade"><span class="uk-button uk-button-large">View Demo</span></figcaption>
+        <a href="<?php echo $demo_url; ?>" class="uk-position-cover" target="_blank"></a>
       </figure>
     </div>
     <div class="tm-theme-info uk-width-small-1-1 uk-width-medium-2-5">
