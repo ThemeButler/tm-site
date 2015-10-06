@@ -18,8 +18,11 @@
 .uk-pagination > li > span {
     border-radius: 2px;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-    border-bottom: 3px solid;
+    border-bottom: 3px solid #444;
     display: block;
+}
+.uk-pagination > li > a {
+    color: @base-link-color;
 }
 .uk-pagination > li > a:hover {
     border-bottom-color: #FCC64C;
@@ -29,4 +32,11 @@
 }
 .uk-pagination li i {
     display: none;
+}
+.uk-pagination strong {
+    font-size: 11px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-top: 7px;
+    color: #444;
 }
