@@ -20,6 +20,8 @@ function tbr_blog_setup() {
   beans_replace_attribute( 'beans_post_meta_categories', 'class', 'uk-text-small uk-text-muted uk-clearfix', 'tm-topic uk-button uk-button-tertiary uk-button-mini' );
   beans_add_attribute( 'beans_post_title', 'class', 'uk-margin-small-top' );
   beans_remove_markup( 'beans_post_body' );
+  beans_add_attribute( 'beans_next_link_post_navigation', 'class', 'uk-text-right' );
+  beans_add_attribute( 'beans_previous_link_post_navigation', 'class', 'uk-text-left' );
 
 }
 

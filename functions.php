@@ -89,7 +89,7 @@ function tbr_setup_theme() {
       beans_remove_markup( 'beans_primary');
       beans_add_attribute( 'beans_post_content', 'class', 'tm-narrow-content' );
   }
-  
+
 }
 
 // Include the needed uikit components
@@ -142,6 +142,24 @@ function tbr_mobile_menu_link() { ?>
     <button class="uk-button uk-visible-small uk-margin-top" data-uk-toggle="{target:'#js-mobile-nav', cls:'tm-nav-open'}">Show Navigation</button>
 <? }
 
+// Add the article lead class
+add_filter( 'the_content', 'tbr_blog_post_content' );
+
+function tbr_blog_post_content( $content ) {
+
+	// Stop here if the excerpt is empty.
+	if ( !has_excerpt() )
+		return $content;
+
+	// Add the excerpt as lead if it is singular.
+	if ( is_singular() )
+		return '<p class="uk-article-lead">' . get_the_excerpt() . '</p>' . $content;
+
+	// Replace content with excerpt and more link if not singular.
+	else
+		return '<p>' . get_the_excerpt() . '</p><p class="uk-margin-bottom-remove">'.  beans_post_more_link() .  '</p>';
+
+}
 
 // Add the bottom newsletter signup
 add_action( 'beans_footer_before_markup', 'tbr_newsletter' );
