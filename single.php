@@ -14,7 +14,7 @@ function tbr_blog_setup() {
   beans_add_attribute( 'beans_comments', 'class', ' uk-panel-box-primary' );
   beans_add_attribute( 'beans_widget_content_recent-posts', 'class', 'tm-list-style1' );
   beans_add_attribute( 'beans_widget_content_categories', 'class', 'tm-list-style1' );
-  beans_replace_attribute( 'beans_post_meta_tags', 'class', 'uk-text-muted', 'tm-tags uk-margin-large-top uk-display-block' );
+  beans_replace_attribute( 'beans_post_meta_tags', 'class', 'uk-text-muted', 'tm-tags uk-margin-medium-top uk-display-block' );
   beans_modify_action_hook( 'beans_post_meta_date', 'beans_post_header_prepend_markup' );
   beans_modify_action_hook( 'beans_post_meta_categories', 'beans_post_header_prepend_markup' );
   beans_replace_attribute( 'beans_post_meta_categories', 'class', 'uk-text-small uk-text-muted uk-clearfix', 'tm-topic uk-button uk-button-tertiary uk-button-mini' );
@@ -22,6 +22,7 @@ function tbr_blog_setup() {
   beans_remove_markup( 'beans_post_body' );
   beans_add_attribute( 'beans_next_link_post_navigation', 'class', 'uk-text-right uk-h3' );
   beans_add_attribute( 'beans_previous_link_post_navigation', 'class', 'uk-text-left uk-h3' );
+  beans_add_attribute( 'beans_embed_oembed', 'class', 'tm-cover-article' );
 
 }
 

@@ -1,6 +1,7 @@
 /**
  * Global
  */
+ @tm-content-gutter-horizontal: 38px;
 
 /**
  * Header
@@ -440,7 +441,17 @@ li.comment {
 .tm-tags a:hover:before {
   border-color: transparent rgba(252, 198, 76, 0.6) transparent transparent;
 }
-
+.tm-cover-article {
+    margin: 30px -@tm-content-gutter-horizontal 0 -@tm-content-gutter-horizontal;
+}
+.tm-cover-article iframe,
+.tm-cover-article blockquote {
+	width: 2000px !important;
+	max-width: 100% !important;
+	box-shadow: none !important;
+	margin: 0 !important;
+	border-radius: 0 !important;
+}
 
 /**
  * Support
@@ -539,6 +550,9 @@ a.tm-cta {
     border: 2px solid #FCC64C;
     border-radius: 50%;
     margin-right: 10px;
+}
+.uk-margin-medium-top {
+    margin-top: 30px;
 }
 .uk-margin-medium-bottom {
     margin-bottom: 30px;
