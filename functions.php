@@ -152,11 +152,11 @@ function tbr_blog_post_content( $content ) {
 		return $content;
 
 	// Add the excerpt as lead if it is singular.
-	if ( is_singular() )
+	if ( is_singular('post') )
 		return '<p class="uk-article-lead">' . get_the_excerpt() . '</p>' . $content;
 
 	// Replace content with excerpt and more link if not singular.
-	else
+    elseif ( is_home() )
 		return '<p>' . get_the_excerpt() . '</p><p class="uk-margin-bottom-remove">'.  beans_post_more_link() .  '</p>';
 
 }
