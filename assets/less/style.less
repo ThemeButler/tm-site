@@ -153,14 +153,11 @@
         overflow: visible;
         padding: 5px;
         border: 0;
-        box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
         background: #fff;
     }
-    figure.uk-thumbnail {
-        img {
-            padding: 5px;
-            background: #fff;
-        }
+    figure {
+        overflow: visible;
     }
 }
 .tm-themes {
@@ -663,22 +660,42 @@ img.wp-smiley {
 @media (max-width: 480px) {
     .tm-top {
         .tm-item {
-            text-align: center;
             a {
-                padding: 20px 20px 40px;
+                padding: 0 20px 20px;
+            }
+            figure.uk-thumbnail {
+                border: 0;
+                width: 80px;
+                float: left;
+                margin: 10px 0 0;
             }
             h3 {
-                font-size: 16px;
-                font-weight: bold;
-                margin-top: 15px!important;
+                max-width: 180px;
+                float: right;
+                clear: none;
+                text-align: left;
+                font-size: 18px;
+                position: relative;
+                top: 23px;
             }
-        }
-        .uk-thumbnail {
-            float: none;
-            margin: 20px 0 20px;
-        }
-        h3 {
-            clear: both;
+            p {
+                clear:both;
+                text-align: left;
+            }
+            p.uk-margin-remove:after {
+                content: "Ad";
+                display: block;
+                width: 40px;
+                height: 30px;
+                background: #eee;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                text-align: center;
+                line-height: 30px;
+                border-top-left-radius: 3px;
+                font-size: 11px;
+            }
         }
     }
     .tm-main {
@@ -858,8 +875,5 @@ img.wp-smiley {
 	.uk-width-medium-1-2.uk-push-1-2 {
         left: 0;
         width: 100%;
-    }
-	.tm-top .tm-item .uk-width-medium-1-1 {
-        width: 90%;
     }
 }
