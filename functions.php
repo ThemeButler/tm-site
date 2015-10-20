@@ -69,6 +69,9 @@ function tbr_setup_theme() {
   beans_add_attribute( 'beans_primary_menu', 'id', 'js-mobile-nav' );
   beans_add_attribute( 'beans_fixed_wrap_header', 'class', 'uk-text-center' );
   beans_remove_attribute( 'beans_menu_navbar', 'id' );
+  beans_remove_attribute( 'beans_header', 'role' );
+  beans_remove_attribute( 'beans_footer', 'role' );
+  beans_remove_attribute( 'beans_primary_menu', 'role' );
   beans_remove_action( 'beans_comments' );
   beans_remove_action( 'beans_replace_nojs_class' );
   beans_remove_action( 'beans_breadcrumb' );
