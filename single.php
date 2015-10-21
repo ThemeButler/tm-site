@@ -32,7 +32,8 @@ add_action( 'beans_uikit_enqueue_scripts', 'tbr_enque_uikit_blog_single' );
 
 function tbr_enque_uikit_blog_single() {
 
-  beans_uikit_enqueue_components( array( 'subnav', 'comment', 'badge', 'list', 'article', 'pagination' ) );
+  beans_uikit_enqueue_components( array( 'subnav', 'comment', 'badge', 'list', 'article', 'pagination', 'modal', 'icon' ) );
+  beans_uikit_enqueue_components( array( 'lightbox' ), 'add-ons' );
 
 }
 
