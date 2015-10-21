@@ -191,7 +191,7 @@ beans_modify_action_callback( 'beans_footer_content', 'tbr_footer' );
 function tbr_footer() { ?>
   <div class="uk-grid uk-grid-width-1-1 uk-grid-width-small-1-2 uk-margin-top uk-margin-large-bottom uk-text-muted">
     <div class="tm-copyright">&#169; ThemeButler <?php echo date('Y'); ?>. All rights reserved.</div>
-    <div class="tm-credits uk-text-right">Built with <a href="https://getbeans.io" target="_blank" title="Build Smarter with Beans.">Beans</a> and <a href="http://wordpress.org" target="_blank">WordPress</a>.</div>
+    <div class="tm-credits uk-text-right">Built with <a href="http://getbeans.io/" target="_blank" title="Build Smarter with Beans.">Beans</a> and <a href="https://wordpress.org/" target="_blank">WordPress</a>.</div>
   </div>
   <script type="text/javascript">
     var _paq = _paq || [];
