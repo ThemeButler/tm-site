@@ -38,7 +38,6 @@ function tbr_theme_intro( $excerpt ) {
   $title = get_the_title($post->ID);
   $lowercase_title = strtolower($title);
   $version = get_post_meta( $post->ID, 'version', true );
-  //$download_parent = 'https://github.com/ThemeButler/tm-' . $lowercase_title . '/releases/download/'. $version . '/tm-' . $lowercase_title . '-v'. $version . '.zip?no_cache=1';
   $download_child = '/wp-content/downloads/tbr-' . $lowercase_title . '.zip?no_cache=1';
   $download_sketch = '/wp-content/downloads/' . $lowercase_title . '-source.zip?no_cache=1';
   $release_date = get_post_meta( $post->ID, 'release_date', true );
@@ -107,9 +106,10 @@ function tbr_theme_intro( $excerpt ) {
         <div class="tm-downloads">
             <h3 class="uk-margin-top-remove uk-margin-small-bottom">Downloads</h3>
             <ul class="uk-list uk-margin-small-top">
-              <li><a href="<?php echo $download_child; ?>" onclick="javascript:_paq.push(['trackEvent', 'Child Theme', 'Download' '<?php echo $title; ?>']);" title="Download tbr-<?php echo $lowercase_title . '-child.zip'; ?>" data-uk-tooltip="{pos:'bottom-left'}"><?php echo $title; ?> Child-Theme</a></li>
-              <li class="tm-divider"><a href="<?php echo $download_sketch; ?>" onclick="javascript:_paq.push(['trackEvent', 'Sketch Source', 'Download' '<?php echo $title; ?>']);" data-uk-tooltip="{pos:'bottom-left'}" title="Download <?php echo $lowercase_title . '-sketch.zip'; ?>"><?php echo $title; ?> Sketch Source</a></li>
-              <li class="uk-margin-top"><a class="tm-text-medium tm-github uk-button" title="View the <?php echo $title; ?> WordPress theme code on GitHub" href="https://github.com/ThemeButler/tbr-<?php echo $lowercase_title; ?>" target="_blank" data-uk-tooltip="{pos:'bottom-left'}"><i class="uk-icon-github uk-icon-small uk-margin-small-right"></i>View on GitHub</a></li>
+                <li><a href="http://www.getbeans.io/download-beans/?no_cache=1" onclick="javascript:_paq.push(['trackEvent', 'Parent Theme', 'Download' '<?php echo $title; ?>']);" title="Download the Beans parent-theme'; ?>" data-uk-tooltip="{pos:'bottom-left'}">Beans Parent-Theme</a></li>
+                <li><a href="<?php echo $download_child; ?>" onclick="javascript:_paq.push(['trackEvent', 'Child Theme', 'Download' '<?php echo $title; ?>']);" title="Download tbr-<?php echo $lowercase_title . '-child.zip'; ?>" data-uk-tooltip="{pos:'bottom-left'}"><?php echo $title; ?> Child-Theme</a></li>
+                <li class="tm-divider"><a href="<?php echo $download_sketch; ?>" onclick="javascript:_paq.push(['trackEvent', 'Sketch Source', 'Download' '<?php echo $title; ?>']);" data-uk-tooltip="{pos:'bottom-left'}" title="Download <?php echo $lowercase_title . '-sketch.zip'; ?>"><?php echo $title; ?> Sketch Source</a></li>
+                <li class="uk-margin-top"><a class="tm-text-medium tm-github uk-button" title="View the <?php echo $title; ?> WordPress theme code on GitHub" href="https://github.com/ThemeButler/tbr-<?php echo $lowercase_title; ?>" target="_blank" data-uk-tooltip="{pos:'bottom-left'}"><i class="uk-icon-github uk-icon-small uk-margin-small-right"></i>View on GitHub</a></li>
             </ul>
         </div>
       </div>
