@@ -117,23 +117,11 @@ beans_add_filter( 'beans_default_layout', 'c' );
 
 
 // Add the top ad section
-add_action( 'beans_header_after_markup', 'tbr_top_ads' );
-
-function tbr_top_ads() { ?>
-  <div class="tm-top tm-media-block">
-    <?php echo bsa_pro_ad_space('1'); ?>
-  </div>
-<? }
-
-
-// Add the bottom ad section
 add_action( 'beans_main_after_markup', 'tbr_bottom_ads' );
 
 function tbr_bottom_ads() { ?>
-  <div class="tm-bottom tm-media-block uk-block">
-    <div class="uk-container uk-container-center">
-      <?php echo bsa_pro_ad_space('2'); ?>
-    </div>
+  <div class="tm-bottom tm-media-block">
+    <?php echo bsa_pro_ad_space('1'); ?>
   </div>
 <? }
 
