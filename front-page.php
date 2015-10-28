@@ -73,7 +73,7 @@ function tbr_home_themes_loop( $query ) {
         Want to see what's coming next? Check out the preview of <strong>Voyager</strong>, our most comprehensive theme yet! <a href="/2015/10/voyager-sneak-peek/" class="uk-button uk-button-small uk-margin-left">Check it out!</a>
     </div>
     <p class="uk-text-center">
-        First time hearing of Beans? You're in for a treat! <a href="http://www.getbeans.io/">Learn more <span>&raquo;</span></a>
+        First time hearing of Beans? You're in for a treat! <a href="http://www.getbeans.io/" target="_blank" title="Learn more about the Beans framework for WordPress on the official Beans site.">Learn more <span>&raquo;</span></a>
     </p>
   </div>
   <?php
