@@ -40,8 +40,8 @@ function tbr_home_themes_loop( $query ) {
   $the_query = new WP_Query( array( 'post_type' => 'themes', 'posts_per_page' => '3', 'no_found_rows' => true ) ); ?>
 
   <div class="tm-home uk-text-center">
-    <h2 class="uk-margin-remove-top">Looking for a child-theme for Beans?</h2>
-    <p class="uk-article-lead tm-excerpt">Browse our growing collection of free child-themes for Beans. They don’t have any complicated configuration options, are heavily optimized for performance and are easy to customize. </p>
+    <h2 class="uk-margin-remove-top">Looking for a new WordPress theme?</h2>
+    <p class="uk-article-lead tm-excerpt">Browse our growing collection of free child-themes for awesome Beans framework for WordPress. You won't find any complicated configuration options, the themes are heavily optimized for performance and are easy to customize. </p>
     <div class="tm-themes uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-3 uk-margin-large-top" >
 
     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
@@ -69,6 +69,12 @@ function tbr_home_themes_loop( $query ) {
       <div>Sorry, there are no posts to display</div>
     <?php endif; ?>
     </div>
+    <div class="tm-next">
+        Want to see what's coming next? Check out the preview of <strong>Voyager</strong>, our most comprehensive theme yet! <a href="/2015/10/voyager-sneak-peek/" class="uk-button uk-button-small uk-margin-left">Check it out!</a>
+    </div>
+    <p class="uk-text-center">
+        First time hearing of Beans? You're in for a treat! <a href="http://www.getbeans.io/">Learn more <span>&raquo;</span></a>
+    </p>
   </div>
   <?php
 
