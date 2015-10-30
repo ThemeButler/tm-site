@@ -118,6 +118,7 @@ function tbr_remove_style_type_attribute( $style ) {
 }
 
 
+
 // remove editor filters
 remove_filter ('the_content', 'wpautop');
 remove_filter( 'the_excerpt', 'wpautop' );

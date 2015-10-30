@@ -27,6 +27,12 @@ function tbr_enqueue_uikit_assets() {
 remove_action('wp_enqueue_scripts', 'BSA_PRO_add_custom_stylesheet');
 remove_action('wp_enqueue_scripts', 'BSA_PRO_add_stylesheet_and_script');
 
+add_action( 'wp_print_styles', 'deregister_my_styles', 100 );
+
+function deregister_my_styles() {
+	wp_deregister_style( 'opanda-lockers' );
+}
+
 remove_theme_support( 'offcanvas-menu' );
 
 
