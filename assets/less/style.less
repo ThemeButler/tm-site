@@ -179,7 +179,7 @@
         margin: 18px auto 0;
     }
 }
-.tm-next {
+.tm-home .tm-next {
     background: #FCC64C;
     box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.24) inset, 1px 1px 2px #ddd;
     padding: 20px 22px;
@@ -715,6 +715,10 @@ img.wp-smiley {
 /**
  * Media Queries
  */
+ @media (max-width: 1290px) {
+    .tm-support span.sep { display: none; }
+    .tm-support .uk-margin-left { margin: 15px 0 0 0!important; }
+}
 @media (min-width: 1220px) {
     .uk-container {
         max-width: 1350px;
