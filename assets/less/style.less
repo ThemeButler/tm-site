@@ -40,8 +40,13 @@
             font-weight: 700;
         }
     }
-    nav i.uk-icon-external-link {
-        display: inherit;
+    .tm-external svg {
+        width: 8px;
+        position: relative;
+        top: 8px;
+        path {
+            fill: #fff;
+        }
     }
     .tm-nav-open {
         li {
@@ -95,7 +100,7 @@
 .tm-media-block {
     background: #fff;
 }
-.tm-bottom {
+.tm-top {
     position: relative;
     h3 {
         font-weight: 500;
@@ -130,6 +135,9 @@
             border-bottom: 3px solid #FCC64C;
             padding-bottom: 2px;
         }
+    }
+    .tm-item:first-of-type{
+        border-right: 1px dashed #ddd;
     }
     .tm-item:hover {
         figure.uk-thumbnail {
@@ -660,57 +668,6 @@ img.wp-smiley {
     border-bottom: 3px solid #FCC64C;
     padding-bottom: 1px;
 }
-
-
-/* Social Locker */
-.onp-sl, .onp-sl .onp-sl-inner-wrap, .onp-sl .onp-sl-outer-wrap { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-.onp-sl iframe { margin: 0!important }
-.onp-sl-always-visible { display: block!important }
-.onp-sl { position: relative!important; background-color: #f9f9f9; margin: 20px auto; max-width: 100%; }
-.onp-sl .onp-sl-inner-wrap { position: relative; overflow: visible; }
-.onp-sl .onp-sl-first-group.onp-sl-not-single-group { padding-bottom: 0 }
-.onp-sl p { margin: 0!important }
-.onp-sl p+p { margin-top: 7px!important }
-.onp-sl .onp-sl-header,
-.onp-sl .onp-sl-text .onp-sl-strong { font-size: 18px; line-height: 130%; font-weight: 700; display: inline-block; margin-bottom: 7px; }
-.onp-sl .onp-sl-header { margin-bottom: 15px }
-.onp-sl .onp-sl-text { text-align: center; margin-bottom: 10px; }
-.onp-sl .onp-sl-text p { line-height: 150% }
-.onp-sl .onp-sl-note { font-style: italic; text-align: center; font-size: 12px; line-height: 130%; padding-top: 10px; color: #aaa; }
-.onp-sl .onp-sl-first-group .onp-sl-strong:after,
-.onp-sl .onp-sl-first-group .onp-sl-strong:before { content: " "; display: inline-block; width: 11px; height: 14px; margin: 0 9px; background: url(../img/lock-icon.png) 0 2px no-repeat; }
-@media screen and (max-width:500px) {
-	.onp-sl .onp-sl-first-group .onp-sl-strong:after, .onp-sl .onp-sl-first-group .onp-sl-strong:before { display: none }
-}
-.onp-sl .onp-sl-error-body { text-align: center }
-.onp-sl .onp-sl-error-title { text-align: center!important; display: inline-block!important; background-color: #c00!important; font-size: 14px!important; line-height: 100%!important; padding: 4px 10px!important; color: #fff!important; vertical-align: top!important; text-shadow: none!important; }
-.onp-sl .onp-sl-error-title:hover { background-color: #e00!important }
-.onp-sl .onp-sl-group-error, .onp-sl-locker-error { background: #c00!important; color: #fff!important; padding: 10px!important; margin-top: 15px!important; text-shadow: none!important; text-align: center; }
-.onp-sl-group-notice { background: #ffffda; color: #111!important; padding: 10px!important; margin-top: 15px!important; text-shadow: none!important; text-align: center; }
-.onp-sl .onp-sl-social-buttons { text-align: center; padding: 30px; }
-.onp-sl .onp-sl-text+.onp-sl-social-buttons { margin-top: 5px }
-.onp-sl .onp-sl-social-buttons .onp-sl-text { margin-bottom: 3px }
-.onp-sl .onp-sl-social-buttons .onp-sl-text .onp-sl-strong { margin-bottom: 0 }
-.onp-sl-social-buttons .onp-sl-control { min-width: 104px; display: inline-block; vertical-align: top; text-align: left; position: relative; margin: 10px 5px 0; background-color: #f2f2f2; }
-.onp-sl-social-buttons .onp-sl-control-inner-wrap { height: 40px; min-width: 120px; padding: 10px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: relative; }
-.onp-sl-social-buttons .onp-sl-social-button { overflow: hidden; padding: 1px; position: relative; top: -1px; }
-.onp-sl-social-buttons .onp-sl-state-loading .onp-sl-control-inner-wrap { background: url(../img/button-loader-f2f2f2.gif) 50% 50% no-repeat }
-.onp-sl-social-buttons .onp-sl-facebook .onp-sl-social-button, .onp-sl-social-buttons .onp-sl-google .onp-sl-social-button, .onp-sl-social-buttons .onp-sl-twitter-tweet .onp-sl-social-button { width: 104px }
-.onp-sl-social-buttons .onp-sl-google .onp-sl-social-button { position: relative }
-.onp-sl-opera .onp-sl-social-buttons .fb-like { position: relative; top: -2px; }
-.onp-sl-social-buttons .fb-like span { vertical-align: top!important; -moz-box-sizing: content-box; box-sizing: content-box; overflow: hidden; padding: 0 1px; margin: 0; }
-.onp-sl-social-buttons .fb-like iframe,
-.onp-sl-social-buttons .fb-like span { height: 22px }
-.onp-sl-social-buttons .onp-sl-facebook-share .onp-sl-social-button { line-height: 1% }
-.onp-sl-social-buttons.onp-sl-vertical .onp-sl-social-button span { top: 1px }
-.onp-sl-social-buttons.onp-sl-no-counters .onp-sl-social-button { text-align: center }
-.onp-sl-social-buttons .onp-sl-button-error { line-height: normal!important; color: red!important; font-family: arial,sans-serif!important; font-size: 14px!important; }
-.onp-sl-social-buttons .onp-sl-unsupported { font-size: 10px; text-align: center; line-height: 13px; }
-.onp-sl-social-buttons.onp-sl-no-counters .fb_iframe_widget { display: inline-block!important }
-.onp-sl-social-buttons.onp-sl-no-counters .fb-like { overflow: hidden; width: 50px!important; }
-.onp-sl-horizontal.onp-sl-no-counters .fb-share-button { overflow: hidden; width: 60px!important; }
-
-
 
 /**
  * Media Queries

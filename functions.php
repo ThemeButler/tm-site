@@ -90,6 +90,7 @@ function tbr_setup_theme() {
   beans_remove_attribute( 'beans_post', 'id' );
   beans_modify_action_hook( 'beans_footer', 'beans_main_after_markup' );
   beans_add_attribute( 'beans_menu_navbar', 'class', 'uk-hidden-small uk-subnav uk-subnav-line uk-margin-remove tm-nudge' );
+  beans_add_attribute( 'beans_menu_item_link_24', 'class', 'tm-external' );
 
   if ( is_page( 'Theme Setup Guide', 'Features' ) ) {
       beans_remove_attribute( 'beans_post', 'class', 'uk-panel-box' );
@@ -114,7 +115,10 @@ function tbr_enque_uikit_global() {
 // Add external link icon to a menu item
 beans_add_smart_action( 'beans_menu_item_link_24_append_markup', 'custom_add_external_link_icon' );
 function custom_add_external_link_icon() { ?>
-<i class="uk-icon-external-link uk-text-small uk-text-muted uk-margin-small-left"></i>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="32px" height="32px" viewBox="0 0.002 32 32" overflow="visible" enable-background="new 0 0.002 32 32" xml:space="preserve">
+    <path d="M2,32c-1.103,0-2-0.896-2-2V2c0-1.104,0.897-2,2-2h13c0.553,0,1,0.447,1,1v2c0,0.553-0.447,1-1,1H4v24h24V17c0-0.553,0.447-1,1-1h2c0.553,0,1,0.447,1,1v13c0,1.104-0.897,2-2,2H2z"/>
+    <path d="M31,0.002H21c-0.404,0-0.77,0.242-0.924,0.617c-0.155,0.373-0.069,0.803,0.217,1.09l3.586,3.586l-10,10c-0.391,0.391-0.391,1.023,0,1.414l1.414,1.414c0.393,0.391,1.025,0.391,1.416,0l9.999-10l3.585,3.586C30.484,11.9,30.74,12.002,31,12.002c0.129,0,0.259-0.025,0.383-0.078C31.757,11.771,32,11.404,32,11.002v-10C32,0.447,31.553,0.002,31,0.002z"/>
+    </svg>
 <? }
 
 
@@ -123,10 +127,10 @@ beans_add_filter( 'beans_default_layout', 'c' );
 
 
 // Add the top ad section
-add_action( 'beans_main_after_markup', 'tbr_bottom_ads' );
+add_action( 'beans_main_before_markup', 'tbr_top_ads' );
 
-function tbr_bottom_ads() { ?>
-  <div class="tm-bottom tm-media-block">
+function tbr_top_ads() { ?>
+  <div class="tm-top tm-media-block">
     <?php echo bsa_pro_ad_space('1'); ?>
   </div>
 <? }
