@@ -118,7 +118,7 @@ function tbr_inline_svg_logo() { ?>
     <switch>
         <use xlink:href="#logo"></use>
         <foreignObject>
-            <img class="icon" src="<?php get_stylesheet_directory(); ?>/assets/images/themebutler-logo.png" alt="ThemeButler Logo">
+            <img class="icon" src="/wp-content/themes/tm-site/assets/images/themebutler-logo.png" alt="ThemeButler Logo">
         </foreignObject>
     </switch>
 </svg>
@@ -132,7 +132,7 @@ function custom_add_external_link_icon() { ?>
     <switch>
         <use xlink:href="#external-icon"></use>
         <foreignObject>
-            <img class="icon" src="<?php get_stylesheet_directory(); ?>/assets/images/external-icon.png" alt="External">
+            <img class="icon" src="/wp-content/themes/tm-site/assets/images/external-icon.png" alt="External">
         </foreignObject>
     </switch>
 </svg>
