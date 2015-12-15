@@ -23,8 +23,8 @@ add_action( 'beans_uikit_enqueue_scripts', 'tbr_enque_uikit_theme_single' );
 
 function tbr_enque_uikit_theme_single() {
 
-  beans_uikit_enqueue_components( array( 'article', 'overlay' ) );
-  //beans_uikit_enqueue_components( array( 'tooltip' ), 'add-ons' );
+  beans_uikit_enqueue_components( array( 'article', 'icon', 'modal', 'overlay' ) );
+  beans_uikit_enqueue_components( array( 'lightbox', 'slidenav' ), 'add-ons' );
 
 }
 
@@ -46,34 +46,34 @@ function tbr_theme_intro( $excerpt ) {
   $terms_as_text = strip_tags( get_the_term_list( $post->ID, 'theme_type', '', ', ', '' ) );
   $thumb_id = get_post_thumbnail_id();
   $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full-size', true);
+  $full_src = $thumb_url_array[0];
   $resized_src = beans_edit_image( $thumb_url_array[0], array(
     'resize' => array( 750, false )
   ) );
 
   global $post;
-  $images = get_post_meta( $post->ID, 'portfolio_gallery', true );
-  $url = get_post_meta( $post->ID, 'portfolio_url', true );
-  $status = get_post_meta( $post->ID, 'portfolio_status' );
-  $pricerange = get_post_meta( $post->ID, 'portfolio_pricerange', false );
+  $images = get_post_meta( $post->ID, 'theme_screenshots', true );
   $the_content = the_content();
 
-  ?>
+?>
   <div class="uk-grid">
     <div class="tm-image uk-width-small-1-1 uk-width-medium-1-2 uk-margin-large-bottom">
       <figure class="uk-overlay uk-overlay-hover uk-thumbnail">
         <img src="<?php echo $resized_src; ?>" width="750" alt="<?php echo $title; ?> Child-Theme for the Beans WordPress Theme" />
-        <figcaption class="uk-overlay-panel uk-flex uk-flex-center uk-flex-middle uk-text-center uk-overlay-background uk-overlay-fade"><span class="uk-button uk-button-large">View Demo</span></figcaption>
-        <a href="<?php echo $full_src; ?>" class="uk-position-cover" target="_blank"></a>
+        <div class="uk-overlay-panel uk-flex uk-flex-center uk-flex-middle uk-text-center uk-overlay-background uk-overlay-fade"><span class="uk-button uk-button-large">View Screenshots</span></div>
+        <a href="<?php echo $full_src; ?>" class="uk-position-cover" data-uk-lightbox="{group:'<?php echo $post->ID; ?>'}"></a>
       </figure>
+      <div class="uk-hidden">
+          <?php
 
-    <?php foreach ( (array) $images as $image_id ) :
+          foreach ( (array) $images as $image_id ) :
 
-        $image = wp_get_attachment_image_src( $image_id, 'full' );
-        $full_src = $image[0];
-
-    ?>
-        <a href="<?php echo $full_src; ?>" class="uk-hidden" data-uk-lightbox="{group:\'<?php echo $post->ID; ?>'}" title="View full size" data-uk-tooltip="{pos:\'bottom\'}">';</a>
-    <?php endforeach; ?>
+              $image = wp_get_attachment_image_src( $image_id, 'full' );
+              $full_src = $image[0];
+          ?>
+              <a href="<?php echo $full_src; ?>" data-uk-lightbox="{group:\'<?php echo $post->ID; ?>'}" title="View full size"></a>
+          <?php endforeach; ?>
+      </div>
     </div>
     <div class="tm-theme-info uk-width-small-1-1 uk-width-medium-1-2">
       <header class="tm-theme-top uk-clearfix">
