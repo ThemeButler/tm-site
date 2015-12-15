@@ -112,7 +112,7 @@ function tbr_resources_loop( $query ) {
       $filter_id = 'filters';
     } ?>
 
-    <div class="tm-index-wrap tm-portfolio tm-lazy uk-grid-width-1-1 uk-grid-width-medium-1-2 uk-grid-width-large-1-3" data-uk-grid="{gutter: 30, controls: '#<?php echo $filter_id; ?>'}">
+    <div class="tm-index-wrap tm-portfolio tm-lazy uk-grid-width-1-1 uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4" data-uk-grid="{gutter: 30, controls: '#<?php echo $filter_id; ?>'}">
 
 		<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
 			global $post;
