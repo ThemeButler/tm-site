@@ -76,29 +76,13 @@ function tbr_enque_uikit_blog_single() {
  }
 
 
- // Add the bottom newsletter signup
- add_action( 'tm_no_comments_wrap_append_markup', 'tbr_no_comments_text' );
+// Temp no comments text until I get permission to the use the crickets image
+add_action( 'tm_no_comments_wrap_append_markup', 'tbr_no_comments_text' );
 
 function tbr_no_comments_text() { ?>
-    <p>Help banish the Crickets by adding your voice below!</p>
+    <p>Add your thoughts below!</p>
     <p><a href="#" class="uk-button uk-button-secondary" data-uk-toggle="{target:'#js-comment-form', animation:'uk-animation-slide-bottom'}">Contribute to the discussion</a>
-    <figure class="uk-panel uk-panel-primary tm-sound tm-crickets uk-margin-large-top uk-margin-large-bottom" data-uk-scrollspy="{cls:'uk-animation-fade', target:'.tm-crickets', delay:300}">
-        <img src="/wp-content/themes/tm-site/assets/images/crickets-inactive.jpg" alt="&lt;crickets&gt;" class="tm-crickets tm-no-comments uk-align-center">
-        <figcaption class="uk-text-muted uk-text-center uk-text-small">Image credit: <a href="http://emla.deviantart.com/art/Cute-Crickets-165544070" target="_blank" rel="nofollow">@Emla</a>. <!--<a class="mute"><svg width="8px" height="12px" viewBox="0 0 8 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-                <g id="volume28" sketch:type="MSLayerGroup" transform="translate(0.000000, -280.000000)" fill="#796B69">
-                    <path d="M6.94976323,280.252929 C6.83419851,280.137476 6.69748981,280.07975 6.53952526,280.07975 C6.38156071,280.07975 6.24474013,280.137476 6.12939916,280.252929 L3.09417518,283.288153 L0.706135988,283.288153 C0.548059563,283.288153 0.411350864,283.34588 0.295898018,283.461333 C0.180445173,283.576897 0.12271875,283.713606 0.12271875,283.87157 L0.12271875,287.371515 C0.12271875,287.529479 0.180445173,287.666412 0.295898018,287.781641 C0.411462737,287.897205 0.548171436,287.954932 0.706135988,287.954932 L3.0940633,287.954932 L6.12917542,290.990268 C6.24474013,291.105497 6.38144883,291.163335 6.53930151,291.163335 C6.69748981,291.163335 6.83408664,291.105497 6.94965135,290.990268 C7.06499233,290.874815 7.12271875,290.737994 7.12271875,290.580142 L7.12271875,280.663167 C7.12271875,280.505203 7.0651042,280.368382 6.94976323,280.252929 L6.94976323,280.252929 Z" id="Shape" sketch:type="MSShapeGroup"></path>
-                </g>
-            </g>
-        </svg> Mute sound</a>.--></figcaption>
-    </figure>
-    <audio id="crickets" preload="auto">
-        <source src="/wp-content/themes/tm-site/assets/audio/crickets.mp3"></source>
-        <source src="/wp-content/themes/tm-site/assets/audio/crickets.ogg"></source>
-        Your browser isn\'t invited for super fun audio time.
-    </audio>
 <?php }
-
 
 
 // Add the bottom newsletter signup
