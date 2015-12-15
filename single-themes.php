@@ -56,14 +56,7 @@ function tbr_theme_intro( $excerpt ) {
   $status = get_post_meta( $post->ID, 'portfolio_status' );
   $pricerange = get_post_meta( $post->ID, 'portfolio_pricerange', false );
   $the_content = the_content();
-  $status_title = '';
 
-          if ( $status[0] == 0 )
-            $status_title = 'Offline';
-          elseif ( $status[0] == 1 )
-          	$status_title = 'Online';
-          else
-          	$status_title = 'Coming soon';
   ?>
   <div class="uk-grid">
     <div class="tm-image uk-width-small-1-1 uk-width-medium-1-2 uk-margin-large-bottom">
@@ -86,27 +79,29 @@ function tbr_theme_intro( $excerpt ) {
       <header class="tm-theme-top uk-clearfix">
         <h1 class="uk-margin-remove-top uk-float-left"><?php echo $title; ?></h1>
         <div class="tm-theme-nav uk-float-right">
-          <a href="<?php echo $demo_url; ?>" class="uk-button uk-button-primary uk-float-right uk-margin-left tm-demo-link" target="_blank">View Demo</a>
-          <div class="tm-post-nav uk-float-right">
-            <div class="tm-prev uk-float-left uk-text-left">
-              <?php
-                $prev_post = get_previous_post();
-                if($prev_post) {
-                   $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
-                   echo '<a rel="prev" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_title. '" class="uk-button">&#9756;</a>';
-                }
-              ?>
+            <?php if ( $release_date != 'TBD' ) : ?>
+                <a href="<?php echo $demo_url; ?>" class="uk-button uk-button-primary uk-float-right uk-margin-left tm-demo-link" target="_blank">View Demo</a>
+            <?php endif; ?>
+            <div class="tm-post-nav uk-float-right">
+                <div class="tm-prev uk-float-left uk-text-left">
+                  <?php
+                    $prev_post = get_previous_post();
+                    if($prev_post) {
+                       $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
+                       echo '<a rel="prev" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_title. '" class="uk-button">&#9756;</a>';
+                    }
+                  ?>
+                </div>
+                <div class="tm-next uk-float-right uk-text-right">
+                  <?
+                    $next_post = get_next_post();
+                    if($next_post) {
+                       $next_title = strip_tags(str_replace('"', '', $next_post->post_title));
+                       echo '<a rel="next" href="' . get_permalink($next_post->ID) . '" title="' . $next_title. '" class="uk-button uk-margin-small-left">&#9758;</a>';
+                    }
+                  ?>
+                </div>
             </div>
-            <div class="tm-next uk-float-right uk-text-right">
-              <?
-                $next_post = get_next_post();
-                if($next_post) {
-                   $next_title = strip_tags(str_replace('"', '', $next_post->post_title));
-                   echo '<a rel="next" href="' . get_permalink($next_post->ID) . '" title="' . $next_title. '" class="uk-button uk-margin-small-left">&#9758;</a>';
-                }
-              ?>
-            </div>
-          </div>
         </div>
       </header>
       <p class="uk-article-lead"><?php echo the_excerpt(); ?></p>
