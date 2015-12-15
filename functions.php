@@ -21,7 +21,7 @@ function tbr_enqueue_uikit_assets() {
   beans_compiler_add_fragment( 'uikit', get_stylesheet_directory() . '/assets/js/theme.js', 'js' );
 
   // Cleanup AdsPro
-  if( !is_page( 'order' ) && !is_single() ) :
+  if( !is_page( 'order' ) ) :
       remove_action('wp_enqueue_scripts', 'BSA_PRO_add_custom_stylesheet');
       remove_action('wp_enqueue_scripts', 'BSA_PRO_add_stylesheet_and_script');
   endif;
@@ -124,7 +124,7 @@ function tbr_inline_svg_logo() { ?>
     <switch>
         <use xlink:href="#logo"></use>
         <foreignObject>
-            <img class="icon" src="img/themebutler-logo.png" alt="ThemeButler Logo">
+            <img class="icon" src="<?php get_stylesheet_directory(); ?>/assets/images/themebutler-logo.png" alt="ThemeButler Logo">
         </foreignObject>
     </switch>
 </svg>
@@ -138,7 +138,7 @@ function custom_add_external_link_icon() { ?>
     <switch>
         <use xlink:href="#external-icon"></use>
         <foreignObject>
-            <img class="icon" src="img/external-icon.png" alt="External">
+            <img class="icon" src="<?php get_stylesheet_directory(); ?>/assets/images/external-icon.png" alt="External">
         </foreignObject>
     </switch>
 </svg>
@@ -201,7 +201,7 @@ function tbr_top_ads() { ?>
 add_action( 'beans_body_before_markup', 'tbr_top_alert_bar' );
 
 function tbr_top_alert_bar() {
-    if( is_front_page() )
+    if( is_front_page() || 'themes' == is_single('voyager') )
         return null;
     ?>
     <div class="jbar" data-init="jbar" data-jbar='{
@@ -210,9 +210,7 @@ function tbr_top_alert_bar() {
         "url"     : "/2015/10/voyager-sneak-peek/",
         "state"   : "open"
     }'></div>
-
 <? }
-
 
 
 // Add the bottom ad section
