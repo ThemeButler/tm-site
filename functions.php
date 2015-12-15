@@ -20,6 +20,10 @@ function tbr_enqueue_uikit_assets() {
   // Add the theme js as a uikit fragment
   beans_compiler_add_fragment( 'uikit', get_stylesheet_directory() . '/assets/js/theme.js', 'js' );
 
+  // Cleanup AdsPro
+  remove_action('wp_enqueue_scripts', 'BSA_PRO_add_custom_stylesheet');
+  remove_action('wp_enqueue_scripts', 'BSA_PRO_add_stylesheet_and_script');
+
   if( is_single() )
     beans_compiler_add_fragment( 'uikit', get_stylesheet_directory() . '/assets/js/blog-single.js', 'js' );
 
