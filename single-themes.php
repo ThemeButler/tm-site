@@ -50,16 +50,39 @@ function tbr_theme_intro( $excerpt ) {
     'resize' => array( 750, false )
   ) );
 
+  global $post;
+  $images = get_post_meta( $post->ID, 'portfolio_gallery', true );
+  $url = get_post_meta( $post->ID, 'portfolio_url', true );
+  $status = get_post_meta( $post->ID, 'portfolio_status' );
+  $pricerange = get_post_meta( $post->ID, 'portfolio_pricerange', false );
+  $the_content = the_content();
+  $status_title = '';
+
+          if ( $status[0] == 0 )
+            $status_title = 'Offline';
+          elseif ( $status[0] == 1 )
+          	$status_title = 'Online';
+          else
+          	$status_title = 'Coming soon';
   ?>
   <div class="uk-grid">
-    <div class="tm-image uk-width-small-1-1 uk-width-medium-3-5 uk-margin-large-bottom">
+    <div class="tm-image uk-width-small-1-1 uk-width-medium-1-2 uk-margin-large-bottom">
       <figure class="uk-overlay uk-overlay-hover uk-thumbnail">
         <img src="<?php echo $resized_src; ?>" width="750" alt="<?php echo $title; ?> Child-Theme for the Beans WordPress Theme" />
         <figcaption class="uk-overlay-panel uk-flex uk-flex-center uk-flex-middle uk-text-center uk-overlay-background uk-overlay-fade"><span class="uk-button uk-button-large">View Demo</span></figcaption>
-        <a href="<?php echo $demo_url; ?>" class="uk-position-cover" target="_blank"></a>
+        <a href="<?php echo $full_src; ?>" class="uk-position-cover" target="_blank"></a>
       </figure>
+
+    <?php foreach ( (array) $images as $image_id ) :
+
+        $image = wp_get_attachment_image_src( $image_id, 'full' );
+        $full_src = $image[0];
+
+    ?>
+        <a href="<?php echo $full_src; ?>" class="uk-hidden" data-uk-lightbox="{group:\'<?php echo $post->ID; ?>'}" title="View full size" data-uk-tooltip="{pos:\'bottom\'}">';</a>
+    <?php endforeach; ?>
     </div>
-    <div class="tm-theme-info uk-width-small-1-1 uk-width-medium-2-5">
+    <div class="tm-theme-info uk-width-small-1-1 uk-width-medium-1-2">
       <header class="tm-theme-top uk-clearfix">
         <h1 class="uk-margin-remove-top uk-float-left"><?php echo $title; ?></h1>
         <div class="tm-theme-nav uk-float-right">
