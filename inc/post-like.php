@@ -26,8 +26,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 add_action( 'wp_enqueue_scripts', 'sl_enqueue_scripts' );
 function sl_enqueue_scripts() {
-	wp_enqueue_script( 'likes-js', get_stylesheet_directory() . '/assets/js/likes.js', array( 'jquery' ), '0.5', false );
-	wp_localize_script( 'likes-js', 'simpleLikes', array(
+	beans_compiler_add_fragment( 'likes', get_stylesheet_directory() . '/assets/js/likes.js', 'js' );
+	wp_localize_script( 'likes', 'simpleLikes', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
 		'like' => __( 'Like', 'tbr' ),
 		'unlike' => __( 'Unlike', 'tbr' )
