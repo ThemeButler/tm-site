@@ -119,7 +119,7 @@ function tbr_resources_loop( $query ) {
             $thumb_id = get_post_thumbnail_id();
             $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full-size', true);
             $resized_src = beans_edit_image( $thumb_url_array[0], array(
-                'resize' => array( 407, 301, array( 'center', 'top' ) )
+                'resize' => array( 407, 379, array( 'center', 'top' ) )
             ) );
 
             $resource_cats = get_the_terms($post->ID, 'resource_type');
