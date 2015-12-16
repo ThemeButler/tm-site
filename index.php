@@ -63,7 +63,7 @@ function tbr_categories_prefix() {
 }
 
 // Add the bottom newsletter signup
-add_action( 'beans_main_grid_before_markup', 'tbr_blog_top' );
+//add_action( 'beans_main_grid_before_markup', 'tbr_blog_top' );
 
 function tbr_blog_top() { ?>
     <div class="uk-clearfix">
