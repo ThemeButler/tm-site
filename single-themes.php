@@ -23,7 +23,7 @@ add_action( 'beans_uikit_enqueue_scripts', 'tbr_enque_uikit_theme_single' );
 
 function tbr_enque_uikit_theme_single() {
 
-  beans_uikit_enqueue_components( array( 'article', 'icon', 'modal', 'overlay' ) );
+  beans_uikit_enqueue_components( array( 'article', 'close', 'icon', 'modal', 'overlay' ) );
   beans_uikit_enqueue_components( array( 'lightbox', 'slidenav' ), 'add-ons' );
 
 }
@@ -126,9 +126,13 @@ function tbr_theme_intro( $excerpt ) {
             <h3 class="uk-margin-top-remove uk-margin-small-bottom">Downloads</h3>
             <ul class="uk-list uk-margin-small-top">
                 <li><a href="http://www.getbeans.io/download-beans/?no_cache=1" onclick="javascript:_paq.push(['trackEvent', 'Parent Theme', 'Download' '<?php echo $title; ?>']);" title="Download the Beans parent-theme'; ?>" data-uk-tooltip="{pos:'bottom-left'}">Beans Parent-Theme</a></li>
+                <?php if ( $release_date != 'TBD' ) : ?>
                 <li><a href="<?php echo $download_child; ?>" onclick="javascript:_paq.push(['trackEvent', 'Child Theme', 'Download' '<?php echo $title; ?>']);" title="Download tbr-<?php echo $lowercase_title . '-child.zip'; ?>" data-uk-tooltip="{pos:'bottom-left'}"><?php echo $title; ?> Child-Theme</a></li>
-                <li class="tm-divider"><a href="<?php echo $download_sketch; ?>" onclick="javascript:_paq.push(['trackEvent', 'Sketch Source', 'Download' '<?php echo $title; ?>']);" data-uk-tooltip="{pos:'bottom-left'}" title="Download <?php echo $lowercase_title . '-sketch.zip'; ?>"><?php echo $title; ?> Sketch Source</a></li>
+                <?php endif; ?>
+                <li<?php if( $lowercase_title != 'voyager' ) : ?> class="tm-divider"<?php endif; ?>><a href="<?php echo $download_sketch; ?>" onclick="javascript:_paq.push(['trackEvent', 'Sketch Source', 'Download' '<?php echo $title; ?>']);" data-uk-tooltip="{pos:'bottom-left'}" title="Download <?php echo $lowercase_title . '-sketch.zip'; ?>"><?php echo $title; ?> Sketch Source</a></li>
+                <?php if( $lowercase_title != 'voyager' ) : ?>
                 <li class="uk-margin-top"><a class="tm-text-medium tm-github uk-button" title="View the <?php echo $title; ?> WordPress theme code on GitHub" href="https://github.com/ThemeButler/tbr-<?php echo $lowercase_title; ?>" target="_blank" data-uk-tooltip="{pos:'bottom-left'}"><i class="uk-icon-github uk-icon-small uk-margin-small-right"></i>View on GitHub</a></li>
+                <?php endif; ?>
             </ul>
         </div>
       </div>
