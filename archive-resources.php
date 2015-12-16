@@ -119,7 +119,7 @@ function tbr_resources_loop( $query ) {
             $thumb_id = get_post_thumbnail_id();
             $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full-size', true);
             $resized_src = beans_edit_image( $thumb_url_array[0], array(
-                'resize' => array( 405, 378, array( 'center', 'top' ) )
+                'resize' => array( 407, 301, array( 'center', 'top' ) )
             ) );
 
             $resource_cats = get_the_terms($post->ID, 'resource_type');
@@ -135,9 +135,11 @@ function tbr_resources_loop( $query ) {
 		?>
 		<div class="tm-item" data-uk-filter="<?php echo $lowercase_resource_type; ?>">
             <div class="uk-article">
-                <img src="<?php echo $resized_src; ?>" />
+                <a rel="bookmark" href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">
+                    <img src="<?php echo $resized_src; ?>" width="407" height="301" alt="<?php the_title(); ?>" />
+                </a>
                 <div class="uk-panel uk-panel-box">
-    			    <h3 class="uk-margin-top-remove"><?php the_title(); ?></h3>
+    			    <h3 class="uk-margin-top-remove"><a rel="bookmark" href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
                     <div class="tm-meta"><?php echo get_the_term_list( $post->ID, 'resource_type', '', ''); ?><?php echo get_the_term_list( $post->ID, 'resource_tags', '', ''); ?></div>
     				<p><?php the_excerpt(); ?></p>
                     <p class="uk-margin-remove"><a rel="bookmark" class="uk-button uk-button-small uk-button-secondary" href="<?php echo get_permalink(); ?>" title="Learn more">Learn more</a></p>
