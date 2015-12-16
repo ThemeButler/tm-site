@@ -63,7 +63,7 @@ function tbr_theme_intro( $excerpt ) {
         </header>
       <div class="tm-downloads">
           <a class="uk-button uk-button-primary uk-margin-right" href="<?php echo $download_child; ?>" onclick="javascript:_paq.push(['trackEvent', 'Child Theme', 'Download' '<?php echo $title; ?>']);" title="Download tbr-<?php echo $lowercase_title . '-child.zip'; ?>" data-uk-tooltip="{pos:'bottom-left'}">Download</a>
-          <a class="tm-text-medium tm-github uk-button uk-margin-right" title="View the <?php echo $title; ?> WordPress theme code on GitHub" href="https://github.com/ThemeButler/tbr-<?php echo $lowercase_title; ?>" target="_blank" data-uk-tooltip="{pos:'bottom-left'}"><i class="uk-icon-github uk-icon-small uk-margin-small-right"></i>View on GitHub</a>
+          <!--<a class="tm-text-medium tm-github uk-button uk-margin-right" title="View the <?php echo $title; ?> WordPress theme code on GitHub" href="https://github.com/ThemeButler/tbr-<?php echo $lowercase_title; ?>" target="_blank" data-uk-tooltip="{pos:'bottom-left'}"><i class="uk-icon-github uk-icon-small uk-margin-small-right"></i>View on GitHub</a>-->
           <?php echo get_simple_likes_button( get_the_ID() ); ?>
       </div>
       <ul class="tm-summary uk-list uk-margin-left-remove uk-clearfix">
