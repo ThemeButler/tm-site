@@ -299,4 +299,4 @@ do_action( 'themebutler_init' );
 // Includes
 require_once( get_stylesheet_directory() . '/inc/cleanup.php' );
 require_once( get_stylesheet_directory() . '/inc/alert.php' );
-require_once( get_stylesheet_directory() . '/inc/post-like.php' );
+//require_once( get_stylesheet_directory() . '/inc/post-like.php' );
