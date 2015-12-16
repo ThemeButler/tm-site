@@ -136,7 +136,7 @@ function tbr_resources_loop( $query ) {
 		<div class="tm-item" data-uk-filter="<?php echo $lowercase_resource_type; ?>">
             <div class="uk-article">
                 <a rel="bookmark" href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">
-                    <img src="<?php echo $resized_src; ?>" width="407" height="301" alt="<?php the_title(); ?>" />
+                    <img src="<?php echo $resized_src; ?>" width="407" height="378" alt="<?php the_title(); ?>" />
                 </a>
                 <div class="uk-panel uk-panel-box">
     			    <h3 class="uk-margin-top-remove"><a rel="bookmark" href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
