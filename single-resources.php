@@ -37,9 +37,10 @@ function tbr_theme_intro( $excerpt ) {
 
   $title = get_the_title($post->ID);
   $lowercase_title = strtolower($title);
+  $hyphend_title = str_replace(' ', '-', $lowercase_title);
   $version = get_post_meta( $post->ID, 'version', true );
-  $download_child = '/wp-content/downloads/tbr-' . $lowercase_title . '.zip?no_cache=1';
-  $download_sketch = '/wp-content/downloads/' . $lowercase_title . '-source.zip?no_cache=1';
+  $download_child = '/wp-content/downloads/tbr-' . $hyphend_title . '.zip?no_cache=1';
+  $download_sketch = '/wp-content/downloads/' . $hyphend_title . '-source.zip?no_cache=1';
   $release_date = get_post_meta( $post->ID, 'release_date', true );
   $terms = get_the_terms($post->ID, 'theme_type');
   $terms_as_text = strip_tags( get_the_term_list( $post->ID, 'resource_type', '', ', ', '' ) );
