@@ -37,7 +37,7 @@ function tbr_theme_intro( $excerpt ) {
 
   $title = get_the_title($post->ID);
   $download_name = get_post_meta( $post->ID, 'download_name', true );
-  $download_path = '/wp-content/downloads/' . $download_name . '.zip?no_cache=1';
+  $download_path = '/wp-content/downloads/' . $download_name . '?no_cache=1';
   $release_date = get_post_meta( $post->ID, 'release_date', true );
   $terms = get_the_terms($post->ID, 'theme_type');
   $terms_as_text = strip_tags( get_the_term_list( $post->ID, 'resource_type', '', ', ', '' ) );
