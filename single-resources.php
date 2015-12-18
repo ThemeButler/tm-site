@@ -62,7 +62,7 @@ function tbr_theme_intro( $excerpt ) {
         </header>
       <div class="tm-downloads">
           <a class="uk-button uk-button-primary uk-margin-right" href="<?php echo $download_path; ?>" onclick="javascript:_paq.push(['trackEvent', 'Resource', 'Download' '<?php echo $title; ?>']);" title="Download <?php echo $title; ?>" data-uk-tooltip="{pos:'bottom-left'}">Download</a>
-          <?php if ( $github_url != '' ) : ?>
+          <?php if ( $github_slug != '' ) : ?>
               <a class="tm-text-medium tm-github uk-button uk-margin-right" title="View the <?php echo $title; ?> code on GitHub" href="https://github.com/ThemeButler/<?php echo $github_slug; ?>" target="_blank" data-uk-tooltip="{pos:'bottom-left'}"><i class="uk-icon-github uk-icon-small uk-margin-small-right"></i>View on GitHub</a>
           <?php endif; ?>
       </div>
