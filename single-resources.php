@@ -36,6 +36,7 @@ function tbr_theme_intro( $excerpt ) {
   global $post;
 
   $title = get_the_title($post->ID);
+  $github_slug = get_post_meta( $post->ID, 'github_slug', true );
   $download_name = get_post_meta( $post->ID, 'download_name', true );
   $download_path = '/wp-content/downloads/' . $download_name . '?no_cache=1';
   $release_date = get_post_meta( $post->ID, 'release_date', true );
@@ -61,6 +62,9 @@ function tbr_theme_intro( $excerpt ) {
         </header>
       <div class="tm-downloads">
           <a class="uk-button uk-button-primary uk-margin-right" href="<?php echo $download_path; ?>" onclick="javascript:_paq.push(['trackEvent', 'Resource', 'Download' '<?php echo $title; ?>']);" title="Download <?php echo $title; ?>" data-uk-tooltip="{pos:'bottom-left'}">Download</a>
+          <?php if ( $github_url != '' ) : ?>
+              <a class="tm-text-medium tm-github uk-button uk-margin-right" title="View the <?php echo $title; ?> code on GitHub" href="https://github.com/ThemeButler/<?php echo $github_slug; ?>" target="_blank" data-uk-tooltip="{pos:'bottom-left'}"><i class="uk-icon-github uk-icon-small uk-margin-small-right"></i>View on GitHub</a>
+          <?php endif; ?>
       </div>
       <ul class="tm-summary uk-list uk-margin-left-remove uk-clearfix">
         <li>Type: <span><?php echo $terms_as_text; ?></span></li>
