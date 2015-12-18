@@ -36,11 +36,8 @@ function tbr_theme_intro( $excerpt ) {
   global $post;
 
   $title = get_the_title($post->ID);
-  $lowercase_title = strtolower($title);
-  $hyphend_title = str_replace(' ', '-', $lowercase_title);
-  $version = get_post_meta( $post->ID, 'version', true );
-  $download_child = '/wp-content/downloads/tbr-' . $hyphend_title . '.zip?no_cache=1';
-  $download_sketch = '/wp-content/downloads/' . $hyphend_title . '-source.zip?no_cache=1';
+  $download_name = get_post_meta( $post->ID, 'download_name', true );
+  $download_path = '/wp-content/downloads/' . $download_name . '.zip?no_cache=1';
   $release_date = get_post_meta( $post->ID, 'release_date', true );
   $terms = get_the_terms($post->ID, 'theme_type');
   $terms_as_text = strip_tags( get_the_term_list( $post->ID, 'resource_type', '', ', ', '' ) );
@@ -63,9 +60,7 @@ function tbr_theme_intro( $excerpt ) {
             <p class="uk-article-lead"><?php echo the_excerpt(); ?></p>
         </header>
       <div class="tm-downloads">
-          <a class="uk-button uk-button-primary uk-margin-right" href="<?php echo $download_child; ?>" onclick="javascript:_paq.push(['trackEvent', 'Child Theme', 'Download' '<?php echo $title; ?>']);" title="Download tbr-<?php echo $lowercase_title . '-child.zip'; ?>" data-uk-tooltip="{pos:'bottom-left'}">Download</a>
-          <!--<a class="tm-text-medium tm-github uk-button uk-margin-right" title="View the <?php echo $title; ?> WordPress theme code on GitHub" href="https://github.com/ThemeButler/tbr-<?php echo $lowercase_title; ?>" target="_blank" data-uk-tooltip="{pos:'bottom-left'}"><i class="uk-icon-github uk-icon-small uk-margin-small-right"></i>View on GitHub</a>-->
-          <?php //echo get_simple_likes_button( get_the_ID() ); ?>
+          <a class="uk-button uk-button-primary uk-margin-right" href="<?php echo $download_path; ?>" onclick="javascript:_paq.push(['trackEvent', 'Resource', 'Download' '<?php echo $title; ?>']);" title="Download <?php echo $title; ?>" data-uk-tooltip="{pos:'bottom-left'}">Download</a>
       </div>
       <ul class="tm-summary uk-list uk-margin-left-remove uk-clearfix">
         <li>Type: <span><?php echo $terms_as_text; ?></span></li>
