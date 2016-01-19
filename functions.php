@@ -195,22 +195,6 @@ function tbr_top_ads() { ?>
 <? }
 
 
-// Add the top ad section
-add_action( 'beans_body_before_markup', 'tbr_top_alert_bar' );
-
-function tbr_top_alert_bar() {
-    if( is_front_page() || 'themes' == is_single('voyager') )
-        return null;
-    ?>
-    <div class="jbar" data-init="jbar" data-jbar='{
-        "message" : "Want to see what is coming next? Check out the preview of <strong>Voyager</strong>, our most comprehensive theme yet!",
-        "button"  : "Check it out!",
-        "url"     : "/2015/10/voyager-sneak-peek/",
-        "state"   : "open"
-    }'></div>
-<? }
-
-
 // Add the bottom ad section
 add_action( 'beans_primary_menu_before_markup', 'tbr_mobile_menu_link' );
 
