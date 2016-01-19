@@ -266,10 +266,10 @@ function tbr_footer() {
 
     <div class="tm-credits uk-margin-large-top uk-margin-bottom uk-text-muted uk-text-center uk-clearfix">
         &#169; ThemeButler <?php echo date('Y'); ?>. All rights reserved.
-        Built with <a href="http://getbeans.io/" target="_blank" title="Build Smarter with Beans.">Beans</a> and <a href="https://wordpress.org/" target="_blank">WordPress</a>.
+        Built with <a href="http://www.getbeans.io/" target="_blank" title="Built with Beans framework for WordPress.">Beans</a> and <a href="https://wordpress.org/" target="_blank">WordPress</a>.
     </div>
 
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
     var _paq = _paq || [];
     _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
     _paq.push(["setCookieDomain", "*.themebutler.com"]);
@@ -284,7 +284,7 @@ function tbr_footer() {
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'js/'; s.parentNode.insertBefore(g,s);
     })();
     </script>
-    <noscript><p><img src="//stats.themebutler.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript> -->
+    <noscript><p><img src="//stats.themebutler.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
 <? }
 
 
