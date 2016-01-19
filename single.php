@@ -49,7 +49,7 @@ add_action( 'beans_uikit_enqueue_scripts', 'tbr_enque_uikit_blog_single' );
 
 function tbr_enque_uikit_blog_single() {
 
-  beans_uikit_enqueue_components( array( 'animation', 'subnav', 'comment', 'badge', 'list', 'article', 'pagination', 'modal', 'icon' ) );
+  beans_uikit_enqueue_components( array( 'animation', 'subnav', 'comment', 'badge', 'list', 'article', 'pagination', 'modal', 'icon', 'overlay', 'close' ) );
   beans_uikit_enqueue_components( array( 'lightbox', 'slidenav' ), 'add-ons' );
 
 }
