@@ -80,7 +80,6 @@ function tbr_setup_theme() {
   beans_remove_markup( 'beans_site' );
   beans_remove_markup( 'beans_content' );
   beans_add_attribute( 'beans_primary', 'role', 'main' );
-  beans_add_attribute( 'beans_header', 'data-uk-sticky', '{top:0}' );
   beans_replace_attribute( 'beans_site_branding', 'class', 'uk-float-left', 'tm-logo uk-align-center tm-nudge' );
   beans_replace_attribute( 'beans_main', 'class', ' uk-block', ' uk-block-large' );
   beans_remove_attribute( 'beans_menu_navbar_primary', 'id' );
@@ -111,7 +110,6 @@ add_action( 'beans_uikit_enqueue_scripts', 'tbr_enque_uikit_global' );
 function tbr_enque_uikit_global() {
 
   beans_uikit_enqueue_components( array( 'toggle', 'flex' ) );
-  beans_uikit_enqueue_components( array( 'sticky' ), 'add-ons' );
 
 }
 
