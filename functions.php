@@ -278,7 +278,21 @@ if ( ! isset( $content_width ) ) $content_width = 880;
 do_action( 'themebutler_init' );
 
 
+// Add a template redirect for the sitemap
+add_filter( 'template_include', 'tbr_template_redirect' );
+
+function tbr_template_redirect( $template ) {
+
+    global $wp, $wp_query;
+
+    if ( $wp->request === 'sitemap.xml' )
+        return get_stylesheet_directory() . '/sitemap.php';
+
+    return $template;
+
+}
+
+
 // Includes
 require_once( get_stylesheet_directory() . '/inc/cleanup.php' );
 require_once( get_stylesheet_directory() . '/inc/alert.php' );
-//require_once( get_stylesheet_directory() . '/inc/post-like.php' );

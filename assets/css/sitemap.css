@@ -1,0 +1,68 @@
+urlset:before,
+urlset:after {
+    content: 'Viva la Sitemap!';
+    font-size: 50px;
+    color: #222;
+    margin-bottom: 100px;
+    text-align: center;
+    display: block;
+}
+urlset:after {
+    content: 'The End';
+    margin-top: 100px;
+}
+urlset {
+    display: block;
+    max-width: 1080px;
+    margin: 100px auto 0;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 13px;
+}
+
+url {
+    display: block;
+    overflow: auto;
+    padding: 5px;
+    word-wrap: break-word;
+}
+
+url:nth-child(2n+1) {
+    background: #f8f8f8;
+}
+
+loc {
+    float: left;
+    max-width: 75%;
+}
+
+lastmod {
+    float: right;
+}
+
+@media screen and ( max-width: 960px ){
+
+    urlset {
+        font-size: 12px;
+    }
+
+    loc, lastmod {
+        max-width: 100%;
+        width: 100%;
+        float: left;
+    }
+
+}
+
+@media screen and ( max-device-width: 500px ) {
+
+    urlset {
+        zoom: 2;
+    }
+
+    loc, lastmod {
+        max-width: 100%;
+        width: 100%;
+        float: left;
+    }
+
+}
