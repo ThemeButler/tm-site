@@ -11,7 +11,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/css" hre
 			'post',
 			'page',
 			'themes',
-			'resources',
+			'resources'
 		),
 		'orderby' => 'modified',
 		'post_status' => 'publish',
