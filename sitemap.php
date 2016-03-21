@@ -5,6 +5,8 @@ header('Content-type: application/xml; charset=utf-8');
 
 echo '<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/css" href="' . get_stylesheet_directory_uri() . '/assets/css/sitemap.css"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
+	$exclude_ids = array( 18, 235 );
+
 	$query = new WP_Query( array(
 		'post_type' => array(
 			'post',
@@ -15,7 +17,8 @@ echo '<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/css" hre
 		'orderby' => 'modified',
 		'post_status' => 'publish',
 		'posts_per_page' => 500000,
-		'has_password' => false
+		'has_password' => false,
+		'post__not_in' => $exclude_ids
 	) );
 
 	if ( $query->have_posts() ) {
