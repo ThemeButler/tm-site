@@ -1,5 +1,6 @@
 <?php
 
+
 // Include Beans
 require_once( get_template_directory() . '/lib/init.php' );
 
@@ -24,16 +25,7 @@ function tbr_enqueue_uikit_assets() {
   remove_action('wp_enqueue_scripts', 'BSA_PRO_add_custom_stylesheet');
   remove_action('wp_enqueue_scripts', 'BSA_PRO_add_stylesheet_and_script');
 
-  if( is_single() )
-    beans_compiler_add_fragment( 'uikit', get_stylesheet_directory() . '/assets/js/blog-single.js', 'js' );
-
 }
-
-remove_theme_support( 'offcanvas-menu' );
-
-
-// Remove unnecessary classes
-add_filter( 'nav_menu_css_class', '__return_false' );
 
 
 // Dequeue unnecessary uikit components
@@ -200,6 +192,7 @@ function tbr_mobile_menu_link() { ?>
     <button class="uk-button uk-visible-small uk-margin-top" data-uk-toggle="{target:'#js-mobile-nav', cls:'tm-nav-open'}">Show Navigation</button>
 <? }
 
+
 // Add the article lead class
 add_filter( 'the_content', 'tbr_blog_post_content' );
 
@@ -219,10 +212,12 @@ function tbr_blog_post_content( $content ) {
 
 }
 
+
 // Register the help menu
 register_nav_menus( array(
 	'help' => 'Help Menu'
 ) );
+
 
 // Register bottom widget area
 beans_add_smart_action( 'widgets_init', 'banks_register_bottom_widget_area' );
@@ -294,5 +289,6 @@ function tbr_template_redirect( $template ) {
 
 
 // Includes
+require_once( get_stylesheet_directory() . '/inc/download.php' );
 require_once( get_stylesheet_directory() . '/inc/cleanup.php' );
 require_once( get_stylesheet_directory() . '/inc/alert.php' );

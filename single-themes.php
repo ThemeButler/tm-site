@@ -38,7 +38,7 @@ function tbr_theme_intro( $excerpt ) {
   $title = get_the_title($post->ID);
   $lowercase_title = strtolower($title);
   $version = get_post_meta( $post->ID, 'version', true );
-  $download_child = '/wp-content/downloads/tbr-' . $lowercase_title . '.zip?no_cache=1';
+  $download_child = '/download-' . $lowercase_title . '/?no_cache=1';
   $download_sketch = '/wp-content/downloads/' . $lowercase_title . '-sketch.zip?no_cache=1';
   $release_date = get_post_meta( $post->ID, 'release_date', true );
   $demo_url = 'http://demo.themebutler.com/' . $lowercase_title . '/';
@@ -79,7 +79,6 @@ function tbr_theme_intro( $excerpt ) {
       <header class="tm-theme-top uk-clearfix">
         <h1 class="uk-margin-remove-top uk-float-left"><?php echo $title; ?></h1>
         <div class="tm-theme-nav uk-float-right">
-            <?php //echo get_simple_likes_button( get_the_ID() ); ?>
             <?php if ( $release_date != 'TBD' ) : ?>
                 <a href="<?php echo $demo_url; ?>" class="uk-button uk-button-primary uk-float-right uk-margin-left tm-demo-link" target="_blank">View Demo</a>
             <?php endif; ?>

@@ -1,23 +1,23 @@
 <?php
 
 function tbr_process_download() {
-	
-	if ( stripos( $_SERVER['REQUEST_URI'], 'download-jenkins-child' ) !== false )
-		$filename = 'tbr-jenkins.zip';
-	elseif ( stripos( $_SERVER['REQUEST_URI'], 'download-totem-child' ) !== false )
-		$filename = 'tbr-totem.zip';
-	elseif ( stripos( $_SERVER['REQUEST_URI'], 'download-banks-child' ) !== false )
-		$filename = 'tbr-banks.zip';
-	elseif ( stripos( $_SERVER['REQUEST_URI'], 'download-tbr-child' ) !== false )
+
+	if ( stripos( $_SERVER['REQUEST_URI'], 'download-jenkins' ) !== false )
+		$filename = 'tm-jenkins-v1.2.3.zip';
+	elseif ( stripos( $_SERVER['REQUEST_URI'], 'download-totem' ) !== false )
+		$filename = 'tm-totem-v1.2.3.zip';
+	elseif ( stripos( $_SERVER['REQUEST_URI'], 'download-banks' ) !== false )
+		$filename = 'tm-banks-v1.2.3.zip';
+	elseif ( stripos( $_SERVER['REQUEST_URI'], 'download-themebutler' ) !== false )
 		$filename = 'tm-tbr-v1.0.0.zip';
-	elseif ( stripos( $_SERVER['REQUEST_URI'], 'download-dfh-child' ) !== false )
+	elseif ( stripos( $_SERVER['REQUEST_URI'], 'download-devignerforhire' ) !== false )
 		$filename = 'tm-dfh-v1.0.0.zip';
 	elseif ( stripos( $_SERVER['REQUEST_URI'], 'download-uikit-sketch' ) !== false )
 		$filename = 'uikit-element-library-v0.7.zip';
-	else ( stripos( $_SERVER['REQUEST_URI'], 'download-wordpress-sketch' ) !== false )
+	elseif ( stripos( $_SERVER['REQUEST_URI'], 'download-wordpress-sketch' ) !== false )
 		$filename = 'wordpress-admin-sketch-v0.1.zip';
 
-	$file = trailingslashit( ABSPATH ) . 'download/' . $filename;
+	$file = trailingslashit( ABSPATH ) . '/wp-content/downloads/' . $filename;
 
 	if ( !file_exists( $file ) )
 		return;

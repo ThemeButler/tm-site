@@ -1,5 +1,6 @@
 <?php
 
+
 // Clean up head
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wp_generator');
@@ -40,6 +41,14 @@ function tbr_unregister_default_widgets() {
 }
 
 
+// Remove unnecessary classes
+add_filter( 'nav_menu_css_class', '__return_false' );
+
+
+// Remove off-canvas support
+remove_theme_support( 'offcanvas-menu' );
+
+
 // Enable svg support
 add_filter('upload_mimes', 'tbr_svg_mime_type');
 
@@ -69,6 +78,7 @@ function tbr_disable_wp_emojicons() {
   add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
 
 }
+
 
 // Disable emojis in the editor
 function disable_emojicons_tinymce( $plugins ) {
@@ -115,7 +125,6 @@ function tbr_remove_style_type_attribute( $style ) {
   return str_replace( " type='text/css'", '', $style );
 
 }
-
 
 
 // remove editor filters
