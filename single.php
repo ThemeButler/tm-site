@@ -27,7 +27,6 @@ function tbr_blog_setup() {
   beans_add_attribute( 'beans_comment_form_field_name', 'placeholder', 'Name' );
   beans_add_attribute( 'beans_comment_form_field_email', 'placeholder', 'Email' );
   beans_add_attribute( 'beans_comment_form_field_url', 'placeholder', 'Website' );
-  beans_add_attribute( 'beans_comment_form_field_comment', 'autofocus', '' );
   beans_add_attribute( 'beans_comment_form_wrap', 'class', 'uk-panel-box' );
   beans_replace_attribute( 'beans_primary', 'class', 'uk-width-medium-3-4', 'uk-width-medium-2-3' );
   beans_replace_attribute( 'beans_sidebar_primary', 'class', 'uk-width-medium-1-4', 'uk-width-medium-1-3' );
