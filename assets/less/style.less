@@ -745,12 +745,17 @@ a.tm-cta {
 .tm-contact .uk-form textarea {
     height: 50px;
     padding: 20px;
-    border: 0 solid #ddd;
-    background: #fff;
+    border: 0;
+    background: #FDFDFD;
     color: #444;
     border-radius: 3px;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.2) inset;
     font-size: 15px;
+}
+.tm-contact .uk-form input.tm-field:focus,
+.tm-contact .uk-form textarea.tm-field:focus{
+    outline: 0;
+    background: #fff;
 }
 .tm-contact {
     .uk-form {
@@ -764,6 +769,7 @@ a.tm-cta {
         }
     }
 }
+
 
 /**
  * Utilities
